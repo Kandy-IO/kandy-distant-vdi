@@ -57,14 +57,17 @@ RibbonRTC=Off
 [Certificates]
 
 CACERT1=On
+
 INTERMEDIATECERT1=On
 
 [CACERT1]
 
 File=/setup/cacerts/CACERT1.pem
+
 Trustargs=C,,
 
 [INTERMEDIATECERT1]
 
 File=/setup/cacerts/INTERMEDIATECERT1.pem
+
 Trustargs=,,,
