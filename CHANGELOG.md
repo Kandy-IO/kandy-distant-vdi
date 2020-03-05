@@ -15,7 +15,7 @@ Note that a 32-bit (RP5) version was not released
 ### Fixed
 - Regression with the log location.
 
-## 1.4.0-2 - 2019-01-10
+## 1.4.0-2 - 2020-01-10
 
 ### Fixed
 
