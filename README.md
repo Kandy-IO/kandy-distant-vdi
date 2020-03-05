@@ -56,10 +56,15 @@ RibbonRTC=Off
 
 [Certificates]
 
-JPMCROOTCA=On
+CACERT1=On
+INTERMEDIATECERT1=On
 
-[JPMCROOTCA]
+[CACERT1]
 
-File=/setup/cacerts/JPMCROOTCA.pem
-
+File=/setup/cacerts/CACERT1.pem
 Trustargs=C,,
+
+[INTERMEDIATECERT1]
+
+File=/setup/cacerts/INTERMEDIATECERT1.pem
+Trustargs=,,,
