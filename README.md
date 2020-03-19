@@ -14,7 +14,7 @@ This section allow to set different configuration flags that affect the browser 
 
 - CachePath: location where to store the application cache. defaults to: /tmp/kandy/cache
 - CommandSwitch: Command Switch arguments to be used withthe browser container.
-- DebugPort: Debug port to be used. If no port is provided the debug port is disabled. This feature can also be enabled by the optional eLux package "Enable development tools" which will use the value 9222.
+- DebugPort: Debug port to be used for development. If no port is provided the debug port is disabled. This feature can also be enabled by the optional eLux package "Enable development tools" which will use the value 9222.
 - LogPath: location where to store the application log (rtc.log). defaults to: /var/log/kandy
 - VerboseLevel: level to which to enable the logs. Level can be from 0 to 10. Is the equivalent of the --v command line switch for the browser container. Overrides the LogLevel option.
 - VerboseModules: Allows to filter the verbose logs. Is the equivalent of the --vmodule command line switch for the browser container. setting it to */rtc/*=1 will enable logs for each of the rtc files that have a verbose level of 1. Overrides the LogLevel option.
