@@ -5,7 +5,7 @@ Kandy WebRTC VDI Toolkit, Citrix Driver change log.
 - This change log follows [keepachangelog.com](http://keepachangelog.com/) recommendations.
 - This project adheres to [Semantic Versioning](http://semver.org/), however, eLux packages also include a -X identifier, which represents the version of the eLux package
 
-## 1.5.1-0 - 2020-03-12
+## 1.5.1-0 - 2020-08-14
 
 ### Fixed
 - Keyboard focus is getting stolen from the VDI session when clicking on the overlay video.
