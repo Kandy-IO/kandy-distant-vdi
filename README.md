@@ -8,10 +8,12 @@ As part of the [Kandy VDI Tookit](https://github.com/Kandy-IO/kandy-vdi-toolkit)
 
 You can donwload the following Root and Code Signing CA certificate from digicert
 
-DigiCert Assured ID Root CA
+DigiCert Assured ID Root CA:
+
 https://cacerts.digicert.com/DigiCertAssuredIDRootCA.crt.pem
 
-DigiCert SHA2 Assured ID Code Signing CA
+DigiCert SHA2 Assured ID Code Signing CA:
+
 https://cacerts.digicert.com/DigiCertSHA2AssuredIDCodeSigningCA.crt.pem
 
 ### Configuration
