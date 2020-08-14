@@ -7,10 +7,10 @@ Kandy WebRTC VDI Toolkit, Citrix Driver change log.
 
 ## 1.5.1-0 - 2020-08-14
 ### Fixed
-- Keyboard focus is getting stolen from the VDI session when clicking on the overlay video.
+- Keyboard focus is getting stolen from the VDI session when clicking on the overlay video. `KAJ-457`
 
 ### Changed
-- Updated the code siging certificate to Ribbon Communications Canada ULC
+- Updated the code siging certificate to Ribbon Communications Canada ULC.
 
 Note that a 32-bit (RP5) version was not released
 
@@ -35,11 +35,11 @@ Note that a 32-bit (RP5) version was not released
 ### Changed
 
 - Change the configuration to be loaded from /setup/kandy.ini
-- Change the log level of most logs to use verbose level. KAJ-133
+- Change the log level of most logs to use verbose level. `KAJ-133`
 
 ### Added
 
-- Added Log rotation so that /var/log/kandy/rtc.log is copied to rtc-n.log on startup KAJ-71
+- Added Log rotation so that /var/log/kandy/rtc.log is copied to rtc-n.log on startup `KAJ-71`
 
 ## 1.3.0-0 - 2019-10-04
 
@@ -52,13 +52,13 @@ Note that a 32-bit (RP5) version was not released
 
 ### Fixed
 
-- Remove logs from Elux Install Script KAA-1902
-- Interoperability with Kandy HID Driver KAA-1875
+- Remove logs from Elux Install Script `KAA-1902`
+- Interoperability with Kandy HID Driver `KAA-1875`
 
 ### Added
 
-- Added Description for the Elux package KAA-1931
-- Ability to Debug the Remote application via an Optional package KAA-1893
+- Added Description for the Elux package `KAA-1931`
+- Ability to Debug the Remote application via an Optional package `KAA-1893`
 
 ## 1.2.1-0 - 2019-06-27
 
