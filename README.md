@@ -4,6 +4,16 @@
 
 As part of the [Kandy VDI Tookit](https://github.com/Kandy-IO/kandy-vdi-toolkit), the Kandy Distant Driver for VDI enables application developers to deliver a HD experience for video and audio calls in a Citrix VDI environment. This driver adds support for the [Citrix Workspace App](https://docs.citrix.com/en-us/citrix-workspace-app.html) on [eLux OS](https://www.unicon-software.com/products/elux/) for use on thin clients.
 
+### eLux Package Signature
+
+You can donwload the following Root and Code Signing CA certificate from digicert
+
+DigiCert Assured ID Root CA
+https://cacerts.digicert.com/DigiCertAssuredIDRootCA.crt.pem
+
+DigiCert SHA2 Assured ID Code Signing CA
+https://cacerts.digicert.com/DigiCertSHA2AssuredIDCodeSigningCA.crt.pem
+
 ### Configuration
 
 The configuration is loaded from /setup/kandy.ini
