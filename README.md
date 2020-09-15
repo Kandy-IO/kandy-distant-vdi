@@ -16,6 +16,10 @@ DigiCert SHA2 Assured ID Code Signing CA:
 
 https://cacerts.digicert.com/DigiCertSHA2AssuredIDCodeSigningCA.crt.pem
 
+### Browser Container Certificates
+
+Elux 6.9 brings certificate management directly in the OS for our browser container. If you need to use custom certificates for reaching https websites in the browser container please ignore the Certificate Configuration below and put the certificate in the /setup/cacerts/browser folder as mentionned in the eLux [Documentation](https://www.unicon-software.com/udocs/en/#admin_guides/scout_enterprise/app_definition/browser/browser_config.htm?Highlight=cacert).
+
 ### Configuration
 
 The configuration is loaded from /setup/kandy.ini
@@ -39,7 +43,7 @@ This section allows to disable the Citrix Module in module.ini
 
 RibbonRTC=Off will disable the RTC.DLL from being loaded by the Citrix Workspace App for Linux.
 
-#### Certificates
+#### Certificates (eLux < 6.9 only)
 
 This section allows to indicate which certificate files to load.
 
