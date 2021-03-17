@@ -1,6 +1,6 @@
 # Change Log
 
-Kandy WebRTC VDI Toolkit, Citrix Driver change log.
+Kandy Distant Driver for VDI eLux change log.
 
 - This change log follows [keepachangelog.com](http://keepachangelog.com/) recommendations.
 - This project adheres to [Semantic Versioning](http://semver.org/), however, eLux packages also include a -X identifier, which represents the version of the eLux package
