@@ -7,6 +7,7 @@ This driver adds support for the [Citrix Workspace App](https://docs.citrix.com/
 ### Requirements
 
 Windows 10 64 bit.
+
 Dual Core CPU with 4 GB RAM recommended.
 
 ### Installation

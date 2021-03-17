@@ -20,6 +20,10 @@ Note that a 32-bit (RP5) version was not released
 
 Note that a 32-bit (RP5) version was not released
 
+### Deprecated
+
+- RP5 is now deprecated.
+
 ## 1.4.0-3 - 2020-01-17
 ### Fixed
 - Regression with the log location.

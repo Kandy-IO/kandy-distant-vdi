@@ -9,9 +9,9 @@ Kandy Distant Driver for VDI Windows change log.
 
 ### Added
 
-- Support for Windows
+- Support for Windows 10 64 bit.
 
 ### Issues
 
-- Interaction with the Kandy Distant VDI remote window with mouse or keyboard is not working. KAJ-613
-- Hibernation or Sleep while the VDI session is open could lead to the VDI Driver not working on wake. KAJ-676
+- Interaction with the Kandy Distant VDI remote window with mouse or keyboard is not working. `KAJ-613`
+- Hibernation or Sleep while the VDI session is open could lead to the VDI Driver not working on wake. `KAJ-676`
