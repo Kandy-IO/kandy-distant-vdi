@@ -2,7 +2,7 @@
 
 ## Kandy Distant Driver for VDI eLux
 
-This driver adds support for the [Citrix Workspace App](https://docs.citrix.com/en-us/citrix-workspace-app.html) on [eLux OS](https://www.unicon-software.com/products/elux/) for use on thin clients.
+This driver adds support for [Citrix Workspace App for Linux](https://docs.citrix.com/en-us/citrix-workspace-app-for-linux.html) on [eLux OS](https://www.unicon-software.com/products/elux/) for use on thin clients.
 
 ### eLux Package Signature
 
