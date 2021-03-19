@@ -4,6 +4,8 @@
 
 This driver adds support for [Citrix Workspace App for Linux](https://docs.citrix.com/en-us/citrix-workspace-app-for-linux.html) on [eLux OS](https://www.unicon-software.com/products/elux/) for use on thin clients.
 
+Note that eLux RP5 is not actively maintained.
+
 ### eLux Package Signature
 
 You can donwload the following Root and Code Signing CA certificate from digicert
