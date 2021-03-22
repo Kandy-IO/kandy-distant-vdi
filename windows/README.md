@@ -6,7 +6,7 @@ This driver adds support for [Citrix Workspace App for Windows](https://docs.cit
 
 ### Requirements
 
-Windows 10 64 bit.
+Windows 10 64 bit (Home Edition not supported by Citrix)
 
 Citrix Workspace App for Windows 2012+ (tested on 2102 in release 1.0.0)
 
@@ -14,7 +14,7 @@ Dual Core CPU with 4 GB RAM recommended.
 
 ### Limitations
 
-In the event that 2 simultanious VDI sessions are opened, only the first session will be able to use the Distant driver.
+In the event that 2 simultaneous VDI sessions are opened, only the first session will be able to use the Distant driver.
 
 ### Installation
 
@@ -36,9 +36,9 @@ program/* -> *EXECUTABLE_PATH_HERE* (ex: C:\Program Files\Kandy\\)
 
 #### Registry
 
-In order for the Driver to be loaded by The Cirtirx Workspace App it needs to be added to the Windows Registry
-1. Locate the VirtualDriverEx string REG_SZ value in the *HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Citrix\ICA Client\Engine\Configuration\Advanced\Modules\ICA 3.0* key. This setting is a coma separated list. Sets the value to 'KandyDistant' if the value is empty or append ',KandyDistant' if there is already a value. ie: 'VirtualDriverEx = KandyDistant' or 'VirtualDriverEx = DriverX,KandyDistant'.
-2. Under the *HKLM:\Software\WOW6432Node\Citrix\ICA Client\Engine\Configuration\Advanced\Modules* key, create a new key named *KandyDistant*.
+In order for the Driver to be loaded by the Citrix Workspace App it needs to be added to the Windows Registry
+1. Locate the VirtualDriverEx string REG_SZ value in the *HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Citrix\ICA Client\Engine\Configuration\Advanced\Modules\ICA 3.0* key. This setting is a comma separated list. Set the value to 'KandyDistant' if the value is empty or append ',KandyDistant' if there is already a value. ie: 'VirtualDriverEx = KandyDistant' or 'VirtualDriverEx = DriverX,KandyDistant'.
+2. Under the *HKLM\Software\WOW6432Node\Citrix\ICA Client\Engine\Configuration\Advanced\Modules* key, create a new key named *KandyDistant*.
 3. Under *KandyDistant*, add the following string REG_SZ values:
  - DriverName = Unsupported
  - DriverNameWin16 = Unsupported
@@ -62,10 +62,10 @@ LogLevel default to info and can be configured with off, critical, error, warn, 
 
 #### RibbonRTC (config.ini)
 
-This section allow to set different configuration flags that affect the browser container.
+This section allows configuration flags that affect the browser container to be set.
 
 - CachePath: location where to store the application cache, defaults to: %AppData%\Kandy\DistantVDI\Cache.
-- CommandSwitch: Command Switch arguments to be used with the browser container. Multiple command switches can be separated by a comma.
+- CommandSwitch: Optional Command Switch arguments to be used with the browser container. Multiple command switches can be separated by a comma.
 - DebugPort: Debug port to be used for development. If no port is provided the debug port is disabled.
 
 #### Sample (config.ini)
