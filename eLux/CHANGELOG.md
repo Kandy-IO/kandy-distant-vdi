@@ -1,6 +1,6 @@
 # Change Log
 
-Kandy WebRTC VDI Toolkit, Citrix Driver change log.
+Kandy Distant Driver for VDI eLux change log.
 
 - This change log follows [keepachangelog.com](http://keepachangelog.com/) recommendations.
 - This project adheres to [Semantic Versioning](http://semver.org/), however, eLux packages also include a -X identifier, which represents the version of the eLux package
@@ -19,6 +19,10 @@ Note that a 32-bit (RP5) version was not released
 - A 64-bit (RP6) version of this package is available
 
 Note that a 32-bit (RP5) version was not released
+
+### Deprecated
+
+- RP5 is now deprecated.
 
 ## 1.4.0-3 - 2020-01-17
 ### Fixed
