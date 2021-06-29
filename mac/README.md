@@ -160,10 +160,12 @@ The `RibbonRTC` section allows configuration flags that affect the browser conta
 - DebugPort: Debug port to be used for development. If no port is provided the debug port is disabled.
 
 ### 5.4 Sample (config.ini)
+```
 [RibbonRTC]
 CachePath=c:\tmp\cache
 CommandSwitch=ignore-certificate-errors,disable-extensions,disable-gpu
 DebugPort=9222
+```
 
 ## 6. Before Running
 Make sure that you have created appropriate directories for the KandyDistant log and the browser cache. These values should match your configuration of the Citrix `Modules` file.
