@@ -1,11 +1,10 @@
 # @kandy-io/kandy-distant-vdi
 
-## Kandy Distant Driver for VDI Mac
-
+## Kandy Distant Driver for VDI Mac (Plugin)
 This driver adds support for [Citrix Workspace App for Mac](https://www.citrix.com/downloads/workspace-app/mac/workspace-app-for-mac-latest.html).
 
+Please note that Citrix refers to Virtual Drivers as "Plugins" when referring to their use on MacOS.
 ### Requirements
-
 MacOS 10+ (Mojave and newer) 64 bit
 
 Citrix Workspace App for Mac 2012 (tested on 2106 in release x.x.x)
@@ -13,35 +12,137 @@ Citrix Workspace App for Mac 2012 (tested on 2106 in release x.x.x)
 Dual Core CPU with 4 GB RAM recommended (equivalent to MacBook Air 2015 and newer)
 
 ### Limitations
-
 Only 1 VDI session is permitted. In the event that a 2nd VDI session is requested, a Session Error response will be returned to the client application.
 
 ### Installation
 
-#### Apple Disk Image
+#### Building the Plugin and Applications
+Change directories to `<KandyLib>/cpp`
+Run the `install.sh` script
 
-#### Install Script
+This will compile the plugin and applications and place them in `<KandyLib>/cpp/Default/out`
 
-The install.ps1 script is given as an example on how to install the files, and will setup the application with some defaults path. The script needs to be run as an administrator and will install the program into C:\Program Files\Kandy.
+#### Signing
+To assist in signing the product components, the following 3 plist files are provided:
+- `<KandyLib>/cpp/entitlements-dylibs.plist`
+- `<KandyLib>/cpp/src/browser/mac/entitlements-helpers.plist`
+- `<KandyLib>/cpp/src/browser/mac/entitlements-helpers.plist`
 
-#### Files
+#### Sign the Plugin
+The plugin and its dependent dynamic libraries must be signed.
+Run the following commands:
+- `codesign -f --timestamp -o runtime --entitlements entitlements-dylibs.plist -s "RIBBON COMMUNICATIONS CANADA ULC" out/Default/KandyDistant.PlugIn/Contents/Frameworks/libzmq.5.dylib`
+- `codesign --verify --deep --strict --verbose=2 out/Default/KandyDistant.PlugIn/Contents/Frameworks/libzmq.5.dylib`
+- `codesign -f --timestamp -o runtime -s "RIBBON COMMUNICATIONS CANADA ULC" out/Default/KandyDistant.PlugIn`
+
+Signing can be verified with the following command:
+`codesign --verify --deep --strict --verbose=2 out/Default/KandyDistant.PlugIn`
+
+#### Sign the Applications
+##### Browser
+Sign the dynamic libraries by running the following commands:
+- `codesign -f --timestamp -o runtime -s "RIBBON COMMUNICATIONS CANADA ULC" out/Default/DistantBrowser.app/Contents/Frameworks/Chromium\ Embedded\ Framework.framework/Libraries/libEGL.dylib`
+- `codesign -f --timestamp -o runtime -s "RIBBON COMMUNICATIONS CANADA ULC" out/Default/DistantBrowser.app/Contents/Frameworks/Chromium\ Embedded\ Framework.framework/Libraries/libGLESv2.dylib`
+- `codesign -f --timestamp -o runtime -s "RIBBON COMMUNICATIONS CANADA ULC" out/Default/DistantBrowser.app/Contents/Frameworks/Chromium\ Embedded\ Framework.framework/Libraries/libswiftshader_libEGL.dylib`
+- `codesign -f --timestamp -o runtime -s "RIBBON COMMUNICATIONS CANADA ULC" out/Default/DistantBrowser.app/Contents/Frameworks/Chromium\ Embedded\ Framework.framework/Libraries/libswiftshader_libGLESv2.dylib`
+- `codesign -f --timestamp -o runtime -s "RIBBON COMMUNICATIONS CANADA ULC" out/Default/DistantBrowser.app/Contents/Frameworks/Chromium\ Embedded\ Framework.framework/Libraries/libvk_swiftshader.dylib`
+- `codesign -f --timestamp -o runtime -s "RIBBON COMMUNICATIONS CANADA ULC" out/Default/DistantBrowser.app/Contents/Frameworks/Chromium\ Embedded\ Framework.framework`
+
+Signing can be verified with the following commands:
+- `codesign --verify --deep --strict --verbose=2 out/Default/DistantBrowser.app/Contents/Frameworks/Chromium\ Embedded\ Framework.framework/Libraries/libEGL.dylib`
+- `codesign --verify --deep --strict --verbose=2 out/Default/DistantBrowser.app/Contents/Frameworks/Chromium\ Embedded\ Framework.framework/Libraries/libGLESv2.dylib`
+- `codesign --verify --deep --strict --verbose=2 out/Default/DistantBrowser.app/Contents/Frameworks/Chromium\ Embedded\ Framework.framework/Libraries/libswiftshader_libEGL.dylib`
+- `codesign --verify --deep --strict --verbose=2 out/Default/DistantBrowser.app/Contents/Frameworks/Chromium\ Embedded\ Framework.framework/Libraries/libswiftshader_libGLESv2.dylib`
+- `codesign --verify --deep --strict --verbose=2 out/Default/DistantBrowser.app/Contents/Frameworks/Chromium\ Embedded\ Framework.framework/Libraries/libvk_swiftshader.dylib`
+- `codesign --verify --deep --strict --verbose=2 out/Default/DistantBrowser.app/Contents/Frameworks/Chromium\ Embedded\ Framework.framework`
+
+Sign the Browser Helper applications by running the following commands:
+- `codesign -f --timestamp -o runtime --entitlements src/browser/mac/entitlements-helpers.plist -s "RIBBON COMMUNICATIONS CANADA ULC" out/Default/DistantBrowser.app/Contents/Frameworks/DistantBrowser\ Helper.app`
+- `codesign -f --timestamp -o runtime --entitlements src/browser/mac/entitlements-helpers.plist -s "RIBBON COMMUNICATIONS CANADA ULC" out/Default/DistantBrowser.app/Contents/Frameworks/DistantBrowser\ Helper\ \(GPU\).app`
+- `codesign -f --timestamp -o runtime --entitlements src/browser/mac/entitlements-helpers.plist -s "RIBBON COMMUNICATIONS CANADA ULC" out/Default/DistantBrowser.app/Contents/Frameworks/DistantBrowser\ Helper\ \(Plugin\).app`
+- `codesign -f --timestamp -o runtime --entitlements src/browser/mac/entitlements-helpers.plist -s "RIBBON COMMUNICATIONS CANADA ULC" out/Default/DistantBrowser.app/Contents/Frameworks/DistantBrowser\ Helper\ \(Renderer\).app`
+- `codesign -f --timestamp -o runtime --entitlements src/browser/mac/entitlements-browser.plist -s "RIBBON COMMUNICATIONS CANADA ULC" out/Default/DistantBrowser.app`
+
+Signing can be verified with the following commands:
+- `codesign --verify --deep --strict --verbose=2 out/Default/DistantBrowser.app/Contents/Frameworks/DistantBrowser\ Helper.app`
+- `codesign --verify --deep --strict --verbose=2 out/Default/DistantBrowser.app/Contents/Frameworks/DistantBrowser\ Helper\ \(GPU\).app`
+- `codesign --verify --deep --strict --verbose=2 out/Default/DistantBrowser.app/Contents/Frameworks/DistantBrowser\ Helper\ \(Plugin\).app`
+- `codesign --verify --deep --strict --verbose=2 out/Default/DistantBrowser.app/Contents/Frameworks/DistantBrowser\ Helper\ \(Renderer\).app`
+- `codesign --verify --deep --strict --verbose=2 out/Default/DistantBrowser.app`
+
+##### Orchestrator
+Sign the dynamic library with the following command:
+`codesign -f --timestamp -o runtime --entitlements entitlements-dylibs.plist -s "RIBBON COMMUNICATIONS CANADA ULC" out/Default/DistantOrchestrator.app/Contents/Frameworks/libzmq.5.dylib`
+
+Sign the Orchestrator application with the following command:
+`codesign -f --timestamp -o runtime --entitlements entitlements-dylibs.plist -s "RIBBON COMMUNICATIONS CANADA ULC" out/Default/DistantOrchestrator.app`
+
+Verify signing with the following commands:
+- `codesign --verify --deep --strict --verbose=2 out/Default/DistantOrchestrator.app/Contents/Frameworks/libzmq.5.dylib`
+- `codesign --verify --deep --strict --verbose=2 out/Default/DistantOrchestrator.app`
+
+##### (OPTIONAL) Create Apple Disk Image
+Should you choose to build your own Apple Disk Image (DMG) for your own purposes, you can follow these steps:
+1. Create an input folder
+2. Create an output folder
+2. Copy the plugin and applications to the input folder:
+  - `<KandyLib>/cpp/out/Default/KandyDistant.PlugIn`
+  - `<KandyLib>/cpp/out/Default/DistantOrchestrator.app`
+  - `<KandyLib>/cpp/out/Default/DistantBrowser.app`
+3. Create the disk image with the following command:
+`hdiutil create -srcFolder <input folder> -quiet -volname KandyDistant -o <output folder>/KandyDistant.dmg`
+4. Sign the disk image:
+`codesign -f --timestamp -s "RIBBON COMMUNICATIONS CANADA ULC" <output folder>/KandyDistant.dmg`
+5. Verify signing:
+`codesign --verify --deep --strict --verbose=2 <output folder>/KandyDistant.dmg`
+
+### Installing
+
+#### Citrix Workspace App
+It is expected that you have installed [Citrix Workspace App for Mac](https://www.citrix.com/downloads/workspace-app/mac/workspace-app-for-mac-latest.html).
+
+
+#### Installing Files
+
+##### Copying the Plugin
+*Note: This assumes that you are installing the Plugin from the usual build directory, and that you are NOT installing it from a mounted Apple Disk Image*
+1. Ensure that the following directories exist:
+- `~/Library/Application Support/Citrix/PlugIns`
+- `~/Library/Application Support/Kandy`
+2. Copy the plugin to the Citrix plugins directory:
+`cp -R <KandyLib>/cpp/out/Default/KandyDistant.PlugIn ~/Library/Application Support/Citrix/PlugIns/`
+3. Copy the 2 applications to the Kandy Application Support directory:
+- `cp -R <KandyLib>/cpp/out/Default/DistantOrchestrator.app ~/Library/Application Support/Kandy/`
+- `cp -R <KandyLib>/cpp/out/Default/DistantBrowser.app ~/Library/Application Support/Kandy/`
 
 ### Configuration
 
-Configuration is provided from two sources:
+#### Setup
+*The Citrix Workspace App must be configured to load the KandyDistant plugin*
+The configuration file for the Citrix Workspace App can be found here:
+`~/Library/Application\ Support/Citrix\ Receiver/Modules`
 
-#### Citrix Configuration
-The Citrix Workspace App provides a Citrix Receiver component with a configuration file available in the Application Support files on your system. This is typically found here:
-- ~/Library/Application Support/Citrix Receiver/Modules
+Edit the `Modules` to add the necessary settings:
+1. Open `~/Library/Application\ Support/Citrix\ Receiver/Modules`
+2. Locate the `[ICA 3.0]` section
+3. Append the KandyDistant plugin to the `VirtualDriver` key. It should look similar to the following:
+`VirtualDriver=Thinwire3.0, TWI, SmartCard, SSPI, TUI, KandyDistant.PlugIn`
+4. Under the same section (`[ICA 3.0]`), add a key for our plugin and assign it the value of "On":
+`KandyDistant.PlugIn=On`
+5. Add a section for our plugin:
+`[KandyDistant]`
 
+#### Modifying Citrix Configuration
 LogPath and LogLevel can be added and modified under the KandyDistant section.
 
 ex:
 - LogPath  = ~/Kandy/logs
 - LogLevel = debug
 
-LogPath will default to ~/Library/Application Support/Kandy/logs
-LogLevel default to info and can be set to:
+LogPath will default to `~/Library/Application Support/Kandy/logs`
+LogLevel will default to `info`
+
+Accepted log level values are:
 - off
 - critical
 - error
@@ -61,11 +162,15 @@ The `RibbonRTC` section allows configuration flags that affect the browser conta
 - DebugPort: Debug port to be used for development. If no port is provided the debug port is disabled.
 
 #### Sample (config.ini)
-
 [RibbonRTC]
-
 CachePath=c:\tmp\cache
-
 CommandSwitch=ignore-certificate-errors,disable-extensions,disable-gpu
-
 DebugPort=9222
+
+#### Before Running
+Make sure that you have created appropriate directories for the KandyDistant log and the browser cache. These values should match your configuration of the Citrix `Modules` file.
+Default values are:
+- `~/Library/Application Support/Kandy/logs`
+- `~/Library/Application Support/Kandy/cache`
+
+Congratulations! You have built, signed, installed and configured the KandyDistant plugin for Citrix Workspace App on MacOS!
