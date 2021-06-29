@@ -1,34 +1,34 @@
 # @kandy-io/kandy-distant-vdi
 
-## Kandy Distant Driver for VDI Mac (Plugin)
+# Kandy Distant Driver for VDI Mac (Plugin)
 This driver adds support for [Citrix Workspace App for Mac](https://www.citrix.com/downloads/workspace-app/mac/workspace-app-for-mac-latest.html).
 
 Please note that Citrix refers to Virtual Drivers as "Plugins" when referring to their use on MacOS.
-### Requirements
+## 1. Requirements
 MacOS 10+ (Mojave and newer) 64 bit
 
 Citrix Workspace App for Mac 2012 (tested on 2106 in release x.x.x)
 
 Dual Core CPU with 4 GB RAM recommended (equivalent to MacBook Air 2015 and newer)
 
-### Limitations
+## 2. Limitations
 Only 1 VDI session is permitted. In the event that a 2nd VDI session is requested, a Session Error response will be returned to the client application.
 
-### Installation
+## 3. Installation
 
-#### Building the Plugin and Applications
+### 3.1 Building the Plugin and Applications
 Change directories to `<KandyLib>/cpp`
 Run the `install.sh` script
 
 This will compile the plugin and applications and place them in `<KandyLib>/cpp/Default/out`
 
-#### Signing
+### 3.2 Signing
 To assist in signing the product components, the following 3 plist files are provided:
 - `<KandyLib>/cpp/entitlements-dylibs.plist`
 - `<KandyLib>/cpp/src/browser/mac/entitlements-helpers.plist`
 - `<KandyLib>/cpp/src/browser/mac/entitlements-helpers.plist`
 
-#### Sign the Plugin
+### 3.3 Sign the Plugin
 The plugin and its dependent dynamic libraries must be signed.
 Run the following commands:
 - `codesign -f --timestamp -o runtime --entitlements entitlements-dylibs.plist -s "RIBBON COMMUNICATIONS CANADA ULC" out/Default/KandyDistant.PlugIn/Contents/Frameworks/libzmq.5.dylib`
@@ -38,8 +38,8 @@ Run the following commands:
 Signing can be verified with the following command:
 `codesign --verify --deep --strict --verbose=2 out/Default/KandyDistant.PlugIn`
 
-#### Sign the Applications
-##### Browser
+### 3.4 Sign the Applications
+#### 3.4.1 Browser
 Sign the dynamic libraries by running the following commands:
 - `codesign -f --timestamp -o runtime -s "RIBBON COMMUNICATIONS CANADA ULC" out/Default/DistantBrowser.app/Contents/Frameworks/Chromium\ Embedded\ Framework.framework/Libraries/libEGL.dylib`
 - `codesign -f --timestamp -o runtime -s "RIBBON COMMUNICATIONS CANADA ULC" out/Default/DistantBrowser.app/Contents/Frameworks/Chromium\ Embedded\ Framework.framework/Libraries/libGLESv2.dylib`
@@ -70,7 +70,7 @@ Signing can be verified with the following commands:
 - `codesign --verify --deep --strict --verbose=2 out/Default/DistantBrowser.app/Contents/Frameworks/DistantBrowser\ Helper\ \(Renderer\).app`
 - `codesign --verify --deep --strict --verbose=2 out/Default/DistantBrowser.app`
 
-##### Orchestrator
+#### 3.4.2 Orchestrator
 Sign the dynamic library with the following command:
 `codesign -f --timestamp -o runtime --entitlements entitlements-dylibs.plist -s "RIBBON COMMUNICATIONS CANADA ULC" out/Default/DistantOrchestrator.app/Contents/Frameworks/libzmq.5.dylib`
 
@@ -81,7 +81,7 @@ Verify signing with the following commands:
 - `codesign --verify --deep --strict --verbose=2 out/Default/DistantOrchestrator.app/Contents/Frameworks/libzmq.5.dylib`
 - `codesign --verify --deep --strict --verbose=2 out/Default/DistantOrchestrator.app`
 
-##### (OPTIONAL) Create Apple Disk Image
+### 3.5 (OPTIONAL) Create Apple Disk Image
 Should you choose to build your own Apple Disk Image (DMG) for your own purposes, you can follow these steps:
 1. Create an input folder
 2. Create an output folder
@@ -96,15 +96,13 @@ Should you choose to build your own Apple Disk Image (DMG) for your own purposes
 5. Verify signing:
 `codesign --verify --deep --strict --verbose=2 <output folder>/KandyDistant.dmg`
 
-### Installing
+## 4. Installing
 
-#### Citrix Workspace App
+### 4.1 Citrix Workspace App
 It is expected that you have installed [Citrix Workspace App for Mac](https://www.citrix.com/downloads/workspace-app/mac/workspace-app-for-mac-latest.html).
 
 
-#### Installing Files
-
-##### Copying the Plugin
+### 4.2 Installing Files
 *Note: This assumes that you are installing the Plugin from the usual build directory, and that you are NOT installing it from a mounted Apple Disk Image*
 1. Ensure that the following directories exist:
 - `~/Library/Application Support/Citrix/PlugIns`
@@ -115,9 +113,9 @@ It is expected that you have installed [Citrix Workspace App for Mac](https://ww
 - `cp -R <KandyLib>/cpp/out/Default/DistantOrchestrator.app ~/Library/Application Support/Kandy/`
 - `cp -R <KandyLib>/cpp/out/Default/DistantBrowser.app ~/Library/Application Support/Kandy/`
 
-### Configuration
+## 5. Configuration
 
-#### Setup
+### 5.1 Setup
 *The Citrix Workspace App must be configured to load the KandyDistant plugin*
 The configuration file for the Citrix Workspace App can be found here:
 `~/Library/Application\ Support/Citrix\ Receiver/Modules`
@@ -132,7 +130,7 @@ Edit the `Modules` to add the necessary settings:
 5. Add a section for our plugin:
 `[KandyDistant]`
 
-#### Modifying Citrix Configuration
+### 5.2 Modifying Citrix Configuration
 LogPath and LogLevel can be added and modified under the KandyDistant section.
 
 ex:
@@ -151,7 +149,7 @@ Accepted log level values are:
 - debug
 - trace
 
-#### KandyLib Configuration
+### 5.3 KandyLib Configuration
 KandyLib-specific configuration can be set and modified in a config ini file which is expected to be found here:
 - ~/Library/Application Support/Kandy/config.ini
 
@@ -161,13 +159,13 @@ The `RibbonRTC` section allows configuration flags that affect the browser conta
 - CommandSwitch: Optional Command Switch arguments to be used with the browser container. Multiple command switches can be separated by a comma.
 - DebugPort: Debug port to be used for development. If no port is provided the debug port is disabled.
 
-#### Sample (config.ini)
+### 5.4 Sample (config.ini)
 [RibbonRTC]
 CachePath=c:\tmp\cache
 CommandSwitch=ignore-certificate-errors,disable-extensions,disable-gpu
 DebugPort=9222
 
-#### Before Running
+## 6. Before Running
 Make sure that you have created appropriate directories for the KandyDistant log and the browser cache. These values should match your configuration of the Citrix `Modules` file.
 Default values are:
 - `~/Library/Application Support/Kandy/logs`
