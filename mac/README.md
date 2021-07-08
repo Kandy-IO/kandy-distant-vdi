@@ -7,7 +7,7 @@ Please note that Citrix refers to Virtual Drivers as "Plugins" when referring to
 ## 1. Requirements
 MacOS 10+ (Mojave and newer) 64 bit
 
-Citrix Workspace App for Mac 2012 (tested on 2106 in release x.x.x)
+Citrix Workspace App for Mac 2012 (tested on 2106 in release 1.0.0)
 
 Dual Core CPU with 4 GB RAM recommended (equivalent to MacBook Air 2015 and newer)
 
