@@ -56,11 +56,11 @@ Signing can be verified with the following commands:
 - `codesign --verify --deep --strict --verbose=2 <your path>/DistantBrowser.app/Contents/Frameworks/Chromium\ Embedded\ Framework.framework`
 
 Sign the Browser Helper applications by running the following commands:
-- `codesign -f --timestamp -o runtime --entitlements src/browser/mac/entitlements-helpers.plist -s "YOUR CERTIFICATE NAME" <your path>/DistantBrowser.app/Contents/Frameworks/DistantBrowser\ Helper.app`
-- `codesign -f --timestamp -o runtime --entitlements src/browser/mac/entitlements-helpers.plist -s "YOUR CERTIFICATE NAME" <your path>/DistantBrowser.app/Contents/Frameworks/DistantBrowser\ Helper\ \(GPU\).app`
-- `codesign -f --timestamp -o runtime --entitlements src/browser/mac/entitlements-helpers.plist -s "YOUR CERTIFICATE NAME" <your path>/DistantBrowser.app/Contents/Frameworks/DistantBrowser\ Helper\ \(Plugin\).app`
-- `codesign -f --timestamp -o runtime --entitlements src/browser/mac/entitlements-helpers.plist -s "YOUR CERTIFICATE NAME" <your path>/DistantBrowser.app/Contents/Frameworks/DistantBrowser\ Helper\ \(Renderer\).app`
-- `codesign -f --timestamp -o runtime --entitlements src/browser/mac/entitlements-browser.plist -s "YOUR CERTIFICATE NAME" <your path>/DistantBrowser.app`
+- `codesign -f --timestamp -o runtime --entitlements entitlements-helpers.plist -s "YOUR CERTIFICATE NAME" <your path>/DistantBrowser.app/Contents/Frameworks/DistantBrowser\ Helper.app`
+- `codesign -f --timestamp -o runtime --entitlements entitlements-helpers.plist -s "YOUR CERTIFICATE NAME" <your path>/DistantBrowser.app/Contents/Frameworks/DistantBrowser\ Helper\ \(GPU\).app`
+- `codesign -f --timestamp -o runtime --entitlements entitlements-helpers.plist -s "YOUR CERTIFICATE NAME" <your path>/DistantBrowser.app/Contents/Frameworks/DistantBrowser\ Helper\ \(Plugin\).app`
+- `codesign -f --timestamp -o runtime --entitlements entitlements-helpers.plist -s "YOUR CERTIFICATE NAME" <your path>/DistantBrowser.app/Contents/Frameworks/DistantBrowser\ Helper\ \(Renderer\).app`
+- `codesign -f --timestamp -o runtime --entitlements entitlements-browser.plist -s "YOUR CERTIFICATE NAME" <your path>/DistantBrowser.app`
 
 Signing can be verified with the following commands:
 - `codesign --verify --deep --strict --verbose=2 <your path>/DistantBrowser.app/Contents/Frameworks/DistantBrowser\ Helper.app`
