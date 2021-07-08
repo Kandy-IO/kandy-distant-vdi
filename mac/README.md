@@ -135,6 +135,7 @@ LogPath and LogLevel can be added and modified under the KandyDistant section.
 ex:
 - LogPath  = ~/Kandy/logs
 - LogLevel = debug
+- ExecutablePath = /your/path/
 
 LogPath will default to `~/Library/Application Support/Kandy/logs`
 LogLevel will default to `info`
@@ -149,21 +150,22 @@ Accepted log level values are:
 - trace
 
 ### 5.3 KandyLib Configuration
-KandyLib-specific configuration can be set and modified in a config ini file which is expected to be found here:
-- ~/Library/Application Support/Kandy/config.ini
+KandyLib-specific configuration can be set and modified in your `config ini` file which is expected to be found in the path provided as `ExecutablePath` in your Citrix configuration file (`Modules`):
 
 The `RibbonRTC` section allows configuration flags that affect the browser container to be set.
 
 - CachePath: location where to store the application cache, defaults to: ~/Library/Application Support/Kandy/cache.
 - CommandSwitch: Optional Command Switch arguments to be used with the browser container. Multiple command switches can be separated by a comma.
 - DebugPort: Debug port to be used for development. If no port is provided the debug port is disabled.
+- ExecutablePath: The absolute path to your execution path and configuration file
 
 ### 5.4 Sample (config.ini)
 ```
 [RibbonRTC]
-CachePath=c:\tmp\cache
+CachePath=~/Library/Application Support/Kandy/cache
 CommandSwitch=ignore-certificate-errors,disable-extensions,disable-gpu
 DebugPort=9222
+ExecutablePath=/your/path
 ```
 
 ## 6. Before Running
