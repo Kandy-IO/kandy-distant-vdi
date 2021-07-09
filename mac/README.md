@@ -30,55 +30,55 @@ The plugin and its dependent dynamic libraries must be signed.
 *Please note that you will need to modify paths to suit your directory structure*
 
 Run the following commands:
-- `codesign -f --timestamp -o runtime --entitlements entitlements-dylibs.plist -s "YOUR CERTIFICATE NAME" <your path>/KandyDistant.PlugIn/Contents/Frameworks/libzmq.5.dylib`
+- `codesign -f --timestamp -o runtime --entitlements entitlements-dylibs.plist -s "YOUR CERTIFICATE NAME" <source path>/KandyDistant.PlugIn/Contents/Frameworks/libzmq.5.dylib`
 - `codesign -f --timestamp -o runtime -s "YOUR CERTIFICATE NAME" KandyDistant.PlugIn`
 
 Signing can be verified with the following commands:
-- `codesign --verify --deep --strict --verbose=2 <your path>/KandyDistant.PlugIn/Contents/Frameworks/libzmq.5.dylib`
-- `codesign --verify --deep --strict --verbose=2 <your path>/KandyDistant.PlugIn`
+- `codesign --verify --deep --strict --verbose=2 <source path>/KandyDistant.PlugIn/Contents/Frameworks/libzmq.5.dylib`
+- `codesign --verify --deep --strict --verbose=2 <source path>/KandyDistant.PlugIn`
 
 ### 3.4 Sign the Applications
 #### 3.4.1 Browser
 Sign the dynamic libraries by running the following commands:
-- `codesign -f --timestamp -o runtime -s "YOUR CERTIFICATE NAME" <your path>/DistantBrowser.app/Contents/Frameworks/Chromium\ Embedded\ Framework.framework/Libraries/libEGL.dylib`
-- `codesign -f --timestamp -o runtime -s "YOUR CERTIFICATE NAME" <your path>/DistantBrowser.app/Contents/Frameworks/Chromium\ Embedded\ Framework.framework/Libraries/libGLESv2.dylib`
-- `codesign -f --timestamp -o runtime -s "YOUR CERTIFICATE NAME" <your path>/DistantBrowser.app/Contents/Frameworks/Chromium\ Embedded\ Framework.framework/Libraries/libswiftshader_libEGL.dylib`
-- `codesign -f --timestamp -o runtime -s "YOUR CERTIFICATE NAME" <your path>/DistantBrowser.app/Contents/Frameworks/Chromium\ Embedded\ Framework.framework/Libraries/libswiftshader_libGLESv2.dylib`
-- `codesign -f --timestamp -o runtime -s "YOUR CERTIFICATE NAME" <your path>/DistantBrowser.app/Contents/Frameworks/Chromium\ Embedded\ Framework.framework/Libraries/libvk_swiftshader.dylib`
-- `codesign -f --timestamp -o runtime -s "YOUR CERTIFICATE NAME" <your path>/DistantBrowser.app/Contents/Frameworks/Chromium\ Embedded\ Framework.framework`
+- `codesign -f --timestamp -o runtime -s "YOUR CERTIFICATE NAME" <source path>/DistantBrowser.app/Contents/Frameworks/Chromium\ Embedded\ Framework.framework/Libraries/libEGL.dylib`
+- `codesign -f --timestamp -o runtime -s "YOUR CERTIFICATE NAME" <source path>/DistantBrowser.app/Contents/Frameworks/Chromium\ Embedded\ Framework.framework/Libraries/libGLESv2.dylib`
+- `codesign -f --timestamp -o runtime -s "YOUR CERTIFICATE NAME" <source path>/DistantBrowser.app/Contents/Frameworks/Chromium\ Embedded\ Framework.framework/Libraries/libswiftshader_libEGL.dylib`
+- `codesign -f --timestamp -o runtime -s "YOUR CERTIFICATE NAME" <source path>/DistantBrowser.app/Contents/Frameworks/Chromium\ Embedded\ Framework.framework/Libraries/libswiftshader_libGLESv2.dylib`
+- `codesign -f --timestamp -o runtime -s "YOUR CERTIFICATE NAME" <source path>/DistantBrowser.app/Contents/Frameworks/Chromium\ Embedded\ Framework.framework/Libraries/libvk_swiftshader.dylib`
+- `codesign -f --timestamp -o runtime -s "YOUR CERTIFICATE NAME" <source path>/DistantBrowser.app/Contents/Frameworks/Chromium\ Embedded\ Framework.framework`
 
 Signing can be verified with the following commands:
-- `codesign --verify --deep --strict --verbose=2 <your path>/DistantBrowser.app/Contents/Frameworks/Chromium\ Embedded\ Framework.framework/Libraries/libEGL.dylib`
-- `codesign --verify --deep --strict --verbose=2 <your path>/DistantBrowser.app/Contents/Frameworks/Chromium\ Embedded\ Framework.framework/Libraries/libGLESv2.dylib`
-- `codesign --verify --deep --strict --verbose=2 <your path>/DistantBrowser.app/Contents/Frameworks/Chromium\ Embedded\ Framework.framework/Libraries/libswiftshader_libEGL.dylib`
-- `codesign --verify --deep --strict --verbose=2 <your path>/DistantBrowser.app/Contents/Frameworks/Chromium\ Embedded\ Framework.framework/Libraries/libswiftshader_libGLESv2.dylib`
-- `codesign --verify --deep --strict --verbose=2 <your path>/DistantBrowser.app/Contents/Frameworks/Chromium\ Embedded\ Framework.framework/Libraries/libvk_swiftshader.dylib`
-- `codesign --verify --deep --strict --verbose=2 <your path>/DistantBrowser.app/Contents/Frameworks/Chromium\ Embedded\ Framework.framework`
+- `codesign --verify --deep --strict --verbose=2 <source path>/DistantBrowser.app/Contents/Frameworks/Chromium\ Embedded\ Framework.framework/Libraries/libEGL.dylib`
+- `codesign --verify --deep --strict --verbose=2 <source path>/DistantBrowser.app/Contents/Frameworks/Chromium\ Embedded\ Framework.framework/Libraries/libGLESv2.dylib`
+- `codesign --verify --deep --strict --verbose=2 <source path>/DistantBrowser.app/Contents/Frameworks/Chromium\ Embedded\ Framework.framework/Libraries/libswiftshader_libEGL.dylib`
+- `codesign --verify --deep --strict --verbose=2 <source path>/DistantBrowser.app/Contents/Frameworks/Chromium\ Embedded\ Framework.framework/Libraries/libswiftshader_libGLESv2.dylib`
+- `codesign --verify --deep --strict --verbose=2 <source path>/DistantBrowser.app/Contents/Frameworks/Chromium\ Embedded\ Framework.framework/Libraries/libvk_swiftshader.dylib`
+- `codesign --verify --deep --strict --verbose=2 <source path>/DistantBrowser.app/Contents/Frameworks/Chromium\ Embedded\ Framework.framework`
 
 Sign the Browser Helper applications by running the following commands:
-- `codesign -f --timestamp -o runtime --entitlements src/browser/mac/entitlements-helpers.plist -s "YOUR CERTIFICATE NAME" <your path>/DistantBrowser.app/Contents/Frameworks/DistantBrowser\ Helper.app`
-- `codesign -f --timestamp -o runtime --entitlements src/browser/mac/entitlements-helpers.plist -s "YOUR CERTIFICATE NAME" <your path>/DistantBrowser.app/Contents/Frameworks/DistantBrowser\ Helper\ \(GPU\).app`
-- `codesign -f --timestamp -o runtime --entitlements src/browser/mac/entitlements-helpers.plist -s "YOUR CERTIFICATE NAME" <your path>/DistantBrowser.app/Contents/Frameworks/DistantBrowser\ Helper\ \(Plugin\).app`
-- `codesign -f --timestamp -o runtime --entitlements src/browser/mac/entitlements-helpers.plist -s "YOUR CERTIFICATE NAME" <your path>/DistantBrowser.app/Contents/Frameworks/DistantBrowser\ Helper\ \(Renderer\).app`
-- `codesign -f --timestamp -o runtime --entitlements src/browser/mac/entitlements-browser.plist -s "YOUR CERTIFICATE NAME" <your path>/DistantBrowser.app`
+- `codesign -f --timestamp -o runtime --entitlements src/browser/mac/entitlements-helpers.plist -s "YOUR CERTIFICATE NAME" <source path>/DistantBrowser.app/Contents/Frameworks/DistantBrowser\ Helper.app`
+- `codesign -f --timestamp -o runtime --entitlements src/browser/mac/entitlements-helpers.plist -s "YOUR CERTIFICATE NAME" <source path>/DistantBrowser.app/Contents/Frameworks/DistantBrowser\ Helper\ \(GPU\).app`
+- `codesign -f --timestamp -o runtime --entitlements src/browser/mac/entitlements-helpers.plist -s "YOUR CERTIFICATE NAME" <source path>/DistantBrowser.app/Contents/Frameworks/DistantBrowser\ Helper\ \(Plugin\).app`
+- `codesign -f --timestamp -o runtime --entitlements src/browser/mac/entitlements-helpers.plist -s "YOUR CERTIFICATE NAME" <source path>/DistantBrowser.app/Contents/Frameworks/DistantBrowser\ Helper\ \(Renderer\).app`
+- `codesign -f --timestamp -o runtime --entitlements src/browser/mac/entitlements-browser.plist -s "YOUR CERTIFICATE NAME" <source path>/DistantBrowser.app`
 
 Signing can be verified with the following commands:
-- `codesign --verify --deep --strict --verbose=2 <your path>/DistantBrowser.app/Contents/Frameworks/DistantBrowser\ Helper.app`
-- `codesign --verify --deep --strict --verbose=2 <your path>/DistantBrowser.app/Contents/Frameworks/DistantBrowser\ Helper\ \(GPU\).app`
-- `codesign --verify --deep --strict --verbose=2 <your path>/DistantBrowser.app/Contents/Frameworks/DistantBrowser\ Helper\ \(Plugin\).app`
-- `codesign --verify --deep --strict --verbose=2 <your path>/DistantBrowser.app/Contents/Frameworks/DistantBrowser\ Helper\ \(Renderer\).app`
-- `codesign --verify --deep --strict --verbose=2 <your path>/DistantBrowser.app`
+- `codesign --verify --deep --strict --verbose=2 <source path>/DistantBrowser.app/Contents/Frameworks/DistantBrowser\ Helper.app`
+- `codesign --verify --deep --strict --verbose=2 <source path>/DistantBrowser.app/Contents/Frameworks/DistantBrowser\ Helper\ \(GPU\).app`
+- `codesign --verify --deep --strict --verbose=2 <source path>/DistantBrowser.app/Contents/Frameworks/DistantBrowser\ Helper\ \(Plugin\).app`
+- `codesign --verify --deep --strict --verbose=2 <source path>/DistantBrowser.app/Contents/Frameworks/DistantBrowser\ Helper\ \(Renderer\).app`
+- `codesign --verify --deep --strict --verbose=2 <source path>/DistantBrowser.app`
 
 #### 3.4.2 Orchestrator
 Sign the dynamic library with the following command:
-`codesign -f --timestamp -o runtime --entitlements entitlements-dylibs.plist -s "YOUR CERTIFICATE NAME" <your path>/DistantOrchestrator.app/Contents/Frameworks/libzmq.5.dylib`
+`codesign -f --timestamp -o runtime --entitlements entitlements-dylibs.plist -s "YOUR CERTIFICATE NAME" <source path>/DistantOrchestrator.app/Contents/Frameworks/libzmq.5.dylib`
 
 Sign the Orchestrator application with the following command:
-`codesign -f --timestamp -o runtime --entitlements entitlements-dylibs.plist -s "YOUR CERTIFICATE NAME" <your path>/DistantOrchestrator.app`
+`codesign -f --timestamp -o runtime --entitlements entitlements-dylibs.plist -s "YOUR CERTIFICATE NAME" <source path>/DistantOrchestrator.app`
 
 Verify signing with the following commands:
-- `codesign --verify --deep --strict --verbose=2 <your path>/DistantOrchestrator.app/Contents/Frameworks/libzmq.5.dylib`
-- `codesign --verify --deep --strict --verbose=2 <your path>/DistantOrchestrator.app`
+- `codesign --verify --deep --strict --verbose=2 <source path>/DistantOrchestrator.app/Contents/Frameworks/libzmq.5.dylib`
+- `codesign --verify --deep --strict --verbose=2 <source path>/DistantOrchestrator.app`
 
 ### 3.5 (OPTIONAL) Create Apple Disk Image
 Should you choose to build your own Apple Disk Image (DMG) for your own purposes, you can follow these steps:
@@ -102,15 +102,12 @@ It is expected that you have installed [Citrix Workspace App for Mac](https://ww
 
 
 ### 4.2 Installing Files
-*Note: This assumes that you are installing the Plugin from the usual build directory, and that you are NOT installing it from a mounted Apple Disk Image*
-1. Ensure that the following directories exist:
-- `~/Library/Application Support/Citrix/PlugIns`
-- `~/Library/Application Support/Kandy`
-2. Copy the plugin to the Citrix plugins directory:
-`cp -R <your path>/KandyDistant.PlugIn ~/Library/Application Support/Citrix/PlugIns/`
+1. Ensure that you have created destination directories for the **plugin** and **applications**
+2. Copy the plugin to your preferred Citrix plugins directory:
+`cp -R <source path>/KandyDistant.PlugIn <plugin destination path>`
 3. Copy the 2 applications to the Kandy Application Support directory:
-- `cp -R <your path>/DistantOrchestrator.app ~/Library/Application Support/Kandy/`
-- `cp -R <your path>/DistantBrowser.app ~/Library/Application Support/Kandy/`
+- `cp -R <source path>/DistantOrchestrator.app <application destination path>`
+- `cp -R <source path>/DistantBrowser.app <application destination path>`
 
 ## 5. Configuration
 
@@ -126,8 +123,11 @@ Edit the `Modules` to add the necessary settings:
 `VirtualDriver=Thinwire3.0, TWI, SmartCard, SSPI, TUI, KandyDistant.PlugIn`
 4. Under the same section (`[ICA 3.0]`), add a key for our plugin and assign it the value of "On":
 `KandyDistant.PlugIn=On`
-5. Add a section for our plugin:
-`[KandyDistant]`
+5. Add a section for our plugin (and optionally set your custom executable path):
+```
+[KandyDistant]
+ExecutablePath = /your/path/
+```
 
 ### 5.2 Modifying Citrix Configuration
 LogPath and LogLevel can be added and modified under the KandyDistant section.
@@ -135,7 +135,6 @@ LogPath and LogLevel can be added and modified under the KandyDistant section.
 ex:
 - LogPath  = ~/Kandy/logs
 - LogLevel = debug
-- ExecutablePath = /your/path/
 
 LogPath will default to `~/Library/Application Support/Kandy/logs`
 LogLevel will default to `info`
