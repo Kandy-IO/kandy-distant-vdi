@@ -5,6 +5,10 @@ Kandy Distant Driver for VDI eLux change log.
 - This change log follows [keepachangelog.com](http://keepachangelog.com/) recommendations.
 - This project adheres to [Semantic Versioning](http://semver.org/), however, eLux packages also include a -X identifier, which represents the version of the eLux package
 
+## 1.5.2-1 - 2021-05-14
+### Fixed
+- Compatibility issue with Citrix Worspace app 2101+. `KAJ-695`
+
 ## 1.5.1-0 - 2020-08-14
 ### Fixed
 - Keyboard focus is getting stolen from the VDI session when clicking on the overlay video. `KAJ-457`
