@@ -15,3 +15,9 @@ See the changelog [here](eLux/CHANGELOG.md).
 Read the documentation [here](windows/README.md).
 
 See the changelog [here](windows/CHANGELOG.md).
+
+### Mac
+
+Read the documentation [here](mac/README.md).
+
+See the changelog [here](mac/CHANGELOG.md).
