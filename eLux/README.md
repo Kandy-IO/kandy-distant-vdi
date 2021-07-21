@@ -8,7 +8,7 @@ Note that eLux RP5 is not actively maintained.
 
 ### eLux Package Signature
 
-You can donwload the following Root and Code Signing CA certificate from digicert
+You can download the following Root and Code Signing CA certificate from digicert
 
 DigiCert Assured ID Root CA:
 
@@ -37,6 +37,7 @@ This section allow to set different configuration flags that affect the browser 
 - VerboseLevel: level to which to enable the logs. Level can be from 0 to 10. Is the equivalent of the --v command line switch for the browser container. Overrides the LogLevel option.
 - VerboseModules: Allows to filter the verbose logs. Is the equivalent of the --vmodule command line switch for the browser container. setting it to */rtc/*=1 will enable logs for each of the rtc files that have a verbose level of 1. Overrides the LogLevel option.
 - LogLevel: Level for which logs are stored. the value can be normal (default), verbose, warning and error.
+- SessionOverwrite: When enabled, the Kandy Distant Driver handles Session Start requests by creating a new session which overwrites any existing session. Accepted values are: `true`, `false` (default)
 
 
 #### Modules
