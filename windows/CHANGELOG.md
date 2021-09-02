@@ -19,7 +19,6 @@ Kandy Distant Driver for VDI Windows change log.
 
 ### Added
 
-- Support for WebHID on Windows. `KAJ-796`
 - Add event for when session fails to load. `KAJ-56`
 - Logs now report issues about opening processes and ports conflicts. `KAJ-774`
 - CefLogLevel as a configuration. `KAJ-810`
@@ -32,7 +31,7 @@ Kandy Distant Driver for VDI Windows change log.
 - Performance improvents for queue. `KAJ-808`
 - Allow session overwrite (allows session to be created even if a session already exist by deleting all existing session). `KAJ-772`
 
-### Issues
+### Known Issues
 
 - Interaction with the Kandy Distant VDI remote window with mouse or keyboard is not working. `KAJ-613`
 
@@ -42,7 +41,7 @@ Kandy Distant Driver for VDI Windows change log.
 
 - Support for Windows 10 64 bit.
 
-### Issues
+### Known Issues
 
 - Interaction with the Kandy Distant VDI remote window with mouse or keyboard is not working. `KAJ-613`
 - Hibernation or Sleep while the VDI session is open could lead to the VDI Driver not working on wake. `KAJ-676`
