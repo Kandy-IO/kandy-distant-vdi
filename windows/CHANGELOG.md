@@ -26,9 +26,9 @@ Kandy Distant Driver for VDI Windows change log.
 
 ### Changed
 
-- Updated the Chrome Embeded Framework to version 91. `KAJ-796`
+- Updated the Chrome Embedded Framework to version 91. `KAJ-796`
 - Updated Citrix VCSDK to 2107. `KAJ-798`
-- Performance improvents for queue. `KAJ-808`
+- Performance improvements for message queue. `KAJ-808`
 - Allow session overwrite (allows session to be created even if a session already exist by deleting all existing session). `KAJ-772`
 
 ### Known Issues
