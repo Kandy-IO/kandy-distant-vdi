@@ -5,6 +5,8 @@ Kandy Distant Driver for VDI Windows change log.
 - This change log follows [keepachangelog.com](http://keepachangelog.com/) recommendations.
 - This project adheres to [Semantic Versioning](http://semver.org/).
 
+## 1.1.2 - 2021-11-18
+
 ## 1.1.0 - 2021-09-02
 
 ### Fixed
