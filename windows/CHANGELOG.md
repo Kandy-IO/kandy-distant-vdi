@@ -7,6 +7,8 @@ Kandy Distant Driver for VDI Windows change log.
 
 ## 1.1.2 - 2021-11-18
 
+## 1.1.1 (Not Released)
+
 ## 1.1.0 - 2021-09-02
 
 ### Fixed
