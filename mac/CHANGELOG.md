@@ -5,6 +5,8 @@ Kandy Distant Driver for VDI Mac change log.
 - This change log follows [keepachangelog.com](http://keepachangelog.com/) recommendations.
 - This project adheres to [Semantic Versioning](http://semver.org/).
 
+# 1.1.3 - 2021-12-06
+
 # 1.1.2 - 2021-11-08
 
 # 1.0.0 - 2021-07-08
