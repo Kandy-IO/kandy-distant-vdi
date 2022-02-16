@@ -5,13 +5,13 @@ Kandy Distant Driver for VDI Mac change log.
 - This change log follows [keepachangelog.com](http://keepachangelog.com/) recommendations.
 - This project adheres to [Semantic Versioning](http://semver.org/).
 
-# 1.1.4 - 2021-12-07
+## 1.1.4 - 2021-12-07
 
 ### Fixed
 
 - Build information is missing from logs. `KAJ-1082`
 
-# 1.1.3 - 2021-12-06
+## 1.1.3 - 2021-12-06
 
 ### Fixed
 
@@ -27,7 +27,7 @@ Kandy Distant Driver for VDI Mac change log.
 
 - Report http connection end error (i.e DNS error). `KAJ-948`
 
-# 1.1.2 - 2021-11-08
+## 1.1.2 - 2021-11-08
 
 ### Fixed
 
@@ -36,7 +36,7 @@ Kandy Distant Driver for VDI Mac change log.
 - Orchestrator hangs on Shutdown. `KAJ-932`
 - Session should fail when window is not available on Mac. `KAJ-933`
 
-# 1.1.1 - 2021-11-05
+## 1.1.1 - 2021-11-05
 
 ### Fixed
 
@@ -45,7 +45,7 @@ Kandy Distant Driver for VDI Mac change log.
 - Status is incorrectly reported as closed. `KAJ-1081`
 - Browser retries unreachable URL in loop. `KAJ-926`
 
-# 1.1.0 - 2021-11-01
+## 1.1.0 - 2021-11-01
 
 ### Fixed
 
@@ -78,7 +78,7 @@ Kandy Distant Driver for VDI Mac change log.
 - Reduce the number of ports use by the application. `KAJ-779`
 - Updated the configuration to use KandyDistant instead of RibbonRTC. `KAJ-809`
 
-# 1.0.0 - 2021-07-08
+## 1.0.0 - 2021-07-08
 
 ### Added
 
