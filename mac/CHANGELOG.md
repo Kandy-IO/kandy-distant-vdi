@@ -7,10 +7,11 @@ Kandy Distant Driver for VDI Mac change log.
 
 ## Known issues
 
+- Distant Window visible when Citrix Viewer inactive `KAJ-1063`
 - Distant windows closes prematurely on Mac. `KAJ-1067`
 - Distant messges sent too quickly causes issues on M1. `KAJ-1023`
 - Multiple session with the same id can be created. `KAJ-1034`
-- Unable to find Mac window. `KAJ-1011`
+- Mac session cannot start if Citrix window is not in focus. `KAJ-1011`
 - Browser stays opened when orchestrator crashes. `KAJ-971`
 - Orchestrator process does not close after simulating browser crash. `KAJ-716`
 
