@@ -5,6 +5,11 @@ Kandy Distant Driver for VDI Windows change log.
 - This change log follows [keepachangelog.com](http://keepachangelog.com/) recommendations.
 - This project adheres to [Semantic Versioning](http://semver.org/).
 
+## Known issues
+
+- Multiple session with the same id can be created. `KAJ-1034`
+- Orchestrator process does not close after simulating browser crash. `KAJ-716`
+
 ## 1.1.3 - 2022-01-11
 
 ### Fixed
@@ -70,17 +75,8 @@ Kandy Distant Driver for VDI Windows change log.
 - Performance improvements for message queue. `KAJ-808`
 - Allow session overwrite (allows session to be created even if a session already exist by deleting all existing session). `KAJ-772`
 
-### Known Issues
-
-- Interaction with the Kandy Distant VDI remote window with mouse or keyboard is not working. `KAJ-613`
-
 ## 1.0.0 - 2021-03-10
 
 ### Added
 
 - Support for Windows 10 64 bit.
-
-### Known Issues
-
-- Interaction with the Kandy Distant VDI remote window with mouse or keyboard is not working. `KAJ-613`
-- Hibernation or Sleep while the VDI session is open could lead to the VDI Driver not working on wake. `KAJ-676`
