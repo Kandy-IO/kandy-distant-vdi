@@ -4,7 +4,7 @@
 
 This driver adds support for [Citrix Workspace App for Windows](https://docs.citrix.com/en-us/citrix-workspace-app-for-windows.html).
 
-### Requirements
+### 1. Requirements
 
 Windows 10 64 bit (Home Edition not supported by Citrix)
 
@@ -12,11 +12,11 @@ Citrix Workspace App for Windows 2012+ (tested on 2102 in release 1.0.0)
 
 Dual Core CPU with 4 GB RAM recommended.
 
-### Limitations
+### 2. Limitations
 
 In the event that 2 simultaneous VDI sessions are opened, only the first session will be able to use the Distant driver.
 
-### Installation
+### 3. Installation
 
 There is no installer provided to install the driver, developers needs to create an installer for their customers to use. The driver files need to be installed in the Citrix ICA program folder and the program files in a folder of their choice (referred below as the Executable Path). Then the Windows Registry needs to be updated to load the driver and point to the program folder. We provide a PowerShell script as a reference on how these steps can be acheived.
 
@@ -45,7 +45,7 @@ In order for the Driver to be loaded by the Citrix Workspace App it needs to be 
  - DriverNameWin32 = KANDY_DISTANT.DLL
  - ExecutablePath = *EXECUTABLE_PATH_HERE* (ex: C:\Program Files\Kandy)
 
-### Configuration
+### 4. Configuration
 
 The configuration is loaded partially from config.ini and partially from the registry.
 
@@ -60,7 +60,7 @@ ex:
 LogPath will default to %AppData%\Kandy\DistantVDI\Log, and must be an absolute path without spaces.
 LogLevel default to info and can be configured with off, critical, error, warn, info, debug and trace
 
-#### RibbonRTC (config.ini)
+#### KandyDistant (config.ini)
 
 This section allows configuration flags that affect the browser container to be set.
 
@@ -70,7 +70,7 @@ This section allows configuration flags that affect the browser container to be 
 
 #### Sample (config.ini)
 
-[RibbonRTC]
+[KandyDistant]
 
 CachePath=c:\tmp\cache
 
