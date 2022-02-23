@@ -54,6 +54,7 @@ Note that the legacy section, `RibbonRTC`, will still work but `KandyDistant` wi
 
 #### 3.2 Sample (kandy.ini)
 
+```
 [KandyDistant]
 CachePath=/tmp/kandy/cache
 CommandSwitch=ignore-certificate-errors,disable-extensions,disable-gpu
@@ -61,6 +62,7 @@ DebugPort=9222
 CefLogLevel=trace
 LogLevel=debug
 SessionOverwrite=false
+```
 
 ### 4. Logs
 The logs can be found at `/var/log/kandy/`.
