@@ -157,6 +157,7 @@ The `KandyDistant` section allows configuration flags that affect the browser co
 - CommandSwitch: Optional Command Switch arguments to be used with the browser container. Multiple command switches can be separated by a comma.
 - DebugPort: Debug port to be used for development. If no port is provided the debug port is disabled.
 - ExecutablePath: The absolute path to your execution path and configuration file
+- SessionOverwrite: When enabled, the Kandy Distant Driver handles Session Start requests by creating a new session which overwrites any existing session. Accepted values are: `true`, `false` (default)
 
 ### 5.4 Sample (config.ini)
 ```
@@ -165,6 +166,7 @@ CachePath=~/Library/Application Support/Kandy/cache
 CommandSwitch=ignore-certificate-errors,disable-extensions,disable-gpu
 DebugPort=9222
 ExecutablePath=/your/path
+SessionOverwrite=false
 ```
 
 ## 6. Before Running

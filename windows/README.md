@@ -24,7 +24,7 @@ The provided ZIP archive contains the program and driver folders, as well as the
 
 #### PowerShell script
 
-The install.ps1 script is given as an example on how to install the files, and will setup the application with some defaults path. The script needs to be run as an administrator and will install the program into C:\Program Files\Kandy. 
+The install.ps1 script is given as an example on how to install the files, and will setup the application with some defaults path. The script needs to be run as an administrator and will install the program into C:\Program Files\Kandy.
 
 #### Files
 
@@ -67,6 +67,7 @@ This section allows configuration flags that affect the browser container to be 
 - CachePath: location where to store the application cache, defaults to: %AppData%\Kandy\DistantVDI\Cache.
 - CommandSwitch: Optional Command Switch arguments to be used with the browser container. Multiple command switches can be separated by a comma.
 - DebugPort: Debug port to be used for development. If no port is provided the debug port is disabled.
+- SessionOverwrite: When enabled, the Kandy Distant Driver handles Session Start requests by creating a new session which overwrites any existing session. Accepted values are: `true`, `false` (default)
 
 #### Sample (config.ini)
 
@@ -77,3 +78,5 @@ CachePath=c:\tmp\cache
 CommandSwitch=ignore-certificate-errors,disable-extensions,disable-gpu
 
 DebugPort=9222
+
+SessionOverwrite=false

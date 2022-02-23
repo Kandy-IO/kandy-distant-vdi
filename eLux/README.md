@@ -6,7 +6,7 @@ This driver adds support for [Citrix Workspace App for Linux](https://docs.citri
 
 ### 1. eLux Package Signature
 
-You can donwload the following Root and Code Signing CA certificate from digicert
+You can download the following Root and Code Signing CA certificate from digicert
 
 DigiCert Assured ID Root CA:
 
@@ -29,9 +29,6 @@ The `KandyDistant` section allows configuration flags that affect the browser co
 Note that the legacy section, `RibbonRTC`, will still work but `KandyDistant` will take priority if both sections contain the same flag.
 
 - CachePath: location where to store the application cache, defaults to: `/tmp/kandy/cache`.
-- CommandSwitch: Optional Command Switch arguments to be used with the browser container. Multiple command switches can be separated by a comma.
-- DebugPort: Debug port to be used for development. If no port is provided the debug port is disabled.
-- ExecutablePath: The absolute path to your execution path and configuration file
 - CefLogLevel: The log level that CEF will use.
     - Accepted CEF log level values are:
         - off
@@ -41,6 +38,9 @@ Note that the legacy section, `RibbonRTC`, will still work but `KandyDistant` wi
         - info
         - debug
         - trace
+- CommandSwitch: Optional Command Switch arguments to be used with the browser container. Multiple command switches can be separated by a comma.
+- DebugPort: Debug port to be used for development. If no port is provided the debug port is disabled.
+- ExecutablePath: The absolute path to your execution path and configuration file
 - LogLevel: The log level that KandyDistant will use. Defaults to `info`.
     - Accepted log level values are:
         - off
@@ -50,8 +50,10 @@ Note that the legacy section, `RibbonRTC`, will still work but `KandyDistant` wi
         - info
         - debug
         - trace
+- SessionOverwrite: When enabled, the Kandy Distant Driver handles Session Start requests by creating a new session which overwrites any existing session. Accepted values are: `true`, `false` (default)
 
 #### 3.2 Sample (kandy.ini)
+
 ```
 [KandyDistant]
 CachePath=/tmp/kandy/cache
@@ -59,11 +61,11 @@ CommandSwitch=ignore-certificate-errors,disable-extensions,disable-gpu
 DebugPort=9222
 CefLogLevel=trace
 LogLevel=debug
+SessionOverwrite=false
 ```
 
 ### 4. Logs
 The logs can be found at `/var/log/kandy/`.
-
 
 ### 5. Known Issues / Limitations
 #### Issues
