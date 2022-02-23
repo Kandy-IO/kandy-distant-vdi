@@ -22,8 +22,8 @@ eLux 6.9 provides certificate management directly in the OS for our browser cont
 
 ### 3. Configuration
 
-#### 3.1 KandyLib Configuration
-KandyLib-specific configuration can be set and modified in your `kandy.ini` file which is expected to be found in `/setup` directory.
+#### 3.1 KandyDistant Configuration
+KandyDistant-specific configuration can be set and modified in your `kandy.ini` file which is expected to be found in `/setup` directory.
 
 The `KandyDistant` section allows configuration flags that affect the browser container to be set.
 Note that the legacy section, `RibbonRTC`, will still work but `KandyDistant` will take priority if both sections contain the same flag.
@@ -63,5 +63,3 @@ LogLevel=debug
 
 ### 4. Logs
 The logs can be found at `/var/log/kandy/`.
-
-Congratulations! You have built, signed, installed and configured the KandyDistant plugin for Citrix Workspace App on Elux!
