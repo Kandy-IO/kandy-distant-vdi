@@ -151,7 +151,7 @@ Accepted log level values are:
 ### 5.3 KandyLib Configuration
 KandyLib-specific configuration can be set and modified in your `config ini` file which is expected to be found in the path provided as `ExecutablePath` in your Citrix configuration file (`Modules`):
 
-The `RibbonRTC` section allows configuration flags that affect the browser container to be set.
+The `KandyDistant` section allows configuration flags that affect the browser container to be set.
 
 - CachePath: location where to store the application cache, defaults to: ~/Library/Application Support/Kandy/cache.
 - CommandSwitch: Optional Command Switch arguments to be used with the browser container. Multiple command switches can be separated by a comma.
@@ -161,7 +161,7 @@ The `RibbonRTC` section allows configuration flags that affect the browser conta
 
 ### 5.4 Sample (config.ini)
 ```
-[RibbonRTC]
+[KandyDistant]
 CachePath=~/Library/Application Support/Kandy/cache
 CommandSwitch=ignore-certificate-errors,disable-extensions,disable-gpu
 DebugPort=9222
