@@ -5,6 +5,11 @@ Kandy Distant Driver for VDI eLux change log.
 - This change log follows [keepachangelog.com](http://keepachangelog.com/) recommendations.
 - This project adheres to [Semantic Versioning](http://semver.org/), however, eLux packages also include a -X identifier, which represents the version of the eLux package
 
+## 1.6.1 - 2022-02-9
+### Changed
+- This release is a complete refactoring to align with the new architecture on Windows and Mac.
+See the README [here](eLux/README.md).
+
 ## 1.5.2-1 - 2021-05-14
 ### Fixed
 - Compatibility issue with Citrix Worspace app 2101+. `KAJ-695`

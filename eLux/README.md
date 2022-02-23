@@ -4,9 +4,7 @@
 
 This driver adds support for [Citrix Workspace App for Linux](https://docs.citrix.com/en-us/citrix-workspace-app-for-linux.html) on [eLux OS](https://www.unicon-software.com/products/elux/) for use on thin clients.
 
-Note that eLux RP5 is not actively maintained.
-
-### eLux Package Signature
+### 1. eLux Package Signature
 
 You can donwload the following Root and Code Signing CA certificate from digicert
 
@@ -18,74 +16,60 @@ DigiCert SHA2 Assured ID Code Signing CA:
 
 https://cacerts.digicert.com/DigiCertSHA2AssuredIDCodeSigningCA.crt.pem
 
-### Browser Container Certificates
+### 2. Browser Container Certificates
 
 eLux 6.9 provides certificate management directly in the OS for our browser container. If there is a need to use custom certificates for reaching https websites in the browser container please ignore the Certificate Configuration below and put the certificate in the /setup/cacerts/browser folder as mentioned in the eLux [Documentation](https://www.unicon-software.com/udocs/en/#admin_guides/scout_enterprise/app_definition/browser/browser_config.htm?Highlight=cacert).
 
-### Configuration
+### 3. Configuration
 
-The configuration is loaded from /setup/kandy.ini
+#### 3.1 KandyDistant Configuration
+KandyDistant-specific configuration can be set and modified in your `kandy.ini` file which is expected to be found in `/setup` directory.
 
-#### RibbonRTC
+The `KandyDistant` section allows configuration flags that affect the browser container to be set.
+Note that the legacy section, `RibbonRTC`, will still work but `KandyDistant` will take priority if both sections contain the same flag.
 
-This section allow to set different configuration flags that affect the browser container.
+- CachePath: location where to store the application cache, defaults to: `/tmp/kandy/cache`.
+- CommandSwitch: Optional Command Switch arguments to be used with the browser container. Multiple command switches can be separated by a comma.
+- DebugPort: Debug port to be used for development. If no port is provided the debug port is disabled.
+- ExecutablePath: The absolute path to your execution path and configuration file
+- CefLogLevel: The log level that CEF will use.
+    - Accepted CEF log level values are:
+        - off
+        - critical
+        - error
+        - warn
+        - info
+        - debug
+        - trace
+- LogLevel: The log level that KandyDistant will use. Defaults to `info`.
+    - Accepted log level values are:
+        - off
+        - critical
+        - error
+        - warn
+        - info
+        - debug
+        - trace
 
-- CachePath: location where to store the application cache. defaults to: /tmp/kandy/cache
-- CommandSwitch: Command Switch arguments to be used with the browser container.
-- DebugPort: Debug port to be used for development. If no port is provided the debug port is disabled. This feature can also be enabled by the optional eLux package "Enable development tools" which will use the value 9222.
-- LogPath: location where to store the application log (rtc.log). defaults to: /var/log/kandy
-- VerboseLevel: level to which to enable the logs. Level can be from 0 to 10. Is the equivalent of the --v command line switch for the browser container. Overrides the LogLevel option.
-- VerboseModules: Allows to filter the verbose logs. Is the equivalent of the --vmodule command line switch for the browser container. setting it to */rtc/*=1 will enable logs for each of the rtc files that have a verbose level of 1. Overrides the LogLevel option.
-- LogLevel: Level for which logs are stored. the value can be normal (default), verbose, warning and error.
-
-
-#### Modules
-
-This section allows to disable the Citrix Module in module.ini
-
-RibbonRTC=Off will disable the RTC.DLL from being loaded by the Citrix Workspace App for Linux.
-
-#### Certificates (eLux < 6.9 only)
-
-This section allows to indicate which certificate files to load.
-
-The name of a section and an indication wether it is On or Off needs to be use here. The section must contain the File and the Trustargs attributes.
-
-#### Sample
-[RibbonRTC]
-
+#### 3.2 Sample (kandy.ini)
+```
+[KandyDistant]
 CachePath=/tmp/kandy/cache
-
-CommandSwitch=disable-extensions,disable-gpu
-
+CommandSwitch=ignore-certificate-errors,disable-extensions,disable-gpu
 DebugPort=9222
+CefLogLevel=trace
+LogLevel=debug
+```
 
-LogPath=/var/log/kandy
+### 4. Logs
+The logs can be found at `/var/log/kandy/`.
 
-VerboseLevel=1
 
-VerboseModules=*/rtc/*=1,*/webrtc/*=1
+### 5. Known Issues / Limitations
+#### Issues
+- Internal VDI error when removing device while application is running. `KAJ-1006`
 
-LogLevel=normal
+#### Unreleased Fixes
+- Window can suddenly not be visible when opening and closing sessions multiple times. `KAJ-1007`
+- Quickly closing a session right after opening it will cause the VDI solution to freeze. `KAJ-1009`
 
-[Modules]
-
-RibbonRTC=Off
-
-[Certificates]
-
-CACERT1=On
-
-INTERMEDIATECERT1=On
-
-[CACERT1]
-
-File=/setup/cacerts/CACERT1.pem
-
-Trustargs=C,,
-
-[INTERMEDIATECERT1]
-
-File=/setup/cacerts/INTERMEDIATECERT1.pem
-
-Trustargs=,,,
