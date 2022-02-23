@@ -22,25 +22,7 @@ eLux 6.9 provides certificate management directly in the OS for our browser cont
 
 ### 3. Configuration
 
-#### 3.1 Setup
-*The Citrix Workspace App must be configured to load the KandyDistant plugin*
-The configuration file for the Citrix Workspace App can be found here:
-`~/Library/Application\ Support/Citrix\ Receiver/Modules`
-
-Edit the `module.ini` to add the necessary settings:
-1. Open `/opt/Citrix/ICAClient/config/module.ini`
-2. Locate the `[ICA 3.0]` section
-3. Append the KandyDistant plugin to the `VirtualDriver` key. It should look similar to the following:
-`VirtualDriver=Thinwire3.0, TWI, SmartCard, SSPI, TUI, KandyDistant.PlugIn`
-4. Under the same section (`[ICA 3.0]`), add a key for our plugin and assign it the value of "On":
-`KandyDistant.PlugIn=On`
-5. Add a section for our plugin (and optionally set your custom executable path which defaults to `/usr/lib/rtc`):
-```
-[KandyDistant]
-ExecutablePath = /your/path/
-```
-
-#### 3.2 Modifying Citrix Configuration
+#### 3.1 Modifying Citrix Configuration
 LogPath and LogLevel can be added and modified under the KandyDistant section.
 
 ex:
@@ -63,7 +45,7 @@ Accepted log level values are:
 - trace
 
 
-#### 3.3 KandyLib Configuration
+#### 3.2 KandyLib Configuration
 KandyLib-specific configuration can be set and modified in your `kandy.ini` file which is expected to be found in `/setup` directory.
 
 The `KandyDistant` section allows configuration flags that affect the browser container to be set.
@@ -84,7 +66,7 @@ Note that the legacy section, `RibbonRTC`, will still work but `KandyDistant` wi
         - trace
 
 
-#### 3.4 Sample (kandy.ini)
+#### 3.3 Sample (kandy.ini)
 ```
 [KandyDistant]
 CachePath=/tmp/kandy/cache
