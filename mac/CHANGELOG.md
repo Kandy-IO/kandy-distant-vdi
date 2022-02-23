@@ -5,15 +5,14 @@ Kandy Distant Driver for VDI Mac change log.
 - This change log follows [keepachangelog.com](http://keepachangelog.com/) recommendations.
 - This project adheres to [Semantic Versioning](http://semver.org/).
 
-## Known issues
+## [Unreleased]
 
-- Distant Window visible when Citrix Viewer inactive `KAJ-1063`
-- Distant windows closes prematurely on Mac. `KAJ-1067`
+- Orchestrator process does not close after simulating browser crash. `KAJ-716`
+- Mac session cannot start if Citrix window is not in focus. `KAJ-936`
+- Browser stays opened when orchestrator crashes. `KAJ-971`
 - Distant messges sent too quickly causes issues on M1. `KAJ-1023`
 - Multiple session with the same id can be created. `KAJ-1034`
-- Mac session cannot start if Citrix window is not in focus. `KAJ-1011`
-- Browser stays opened when orchestrator crashes. `KAJ-971`
-- Orchestrator process does not close after simulating browser crash. `KAJ-716`
+- Distant windows closes prematurely on Mac. `KAJ-1067`
 
 ## 1.1.4 - 2021-12-07
 
@@ -25,9 +24,9 @@ Kandy Distant Driver for VDI Mac change log.
 
 ### Fixed
 
-- Citrix viewer crash on close. `KAJ-934`
 - Cannot reconnect after sleep. `KAJ-916`
 - Cannot reconnect after hibernate. `KAJ-919`
+- Citrix viewer crash on close. `KAJ-934`
 - Two orchestrator instances after system sleep. `KAJ-947`
 - Citrix Viewer crashes after sleep > 3 minutes. `KAJ-951`
 - M1 Fresh Install Browser Process Initial Delay. `KAJ-954`
@@ -41,8 +40,8 @@ Kandy Distant Driver for VDI Mac change log.
 
 ### Fixed
 
-- Orchestrator may crash on shutdown. `KAJ-931`
 - Browser proecess crash on close. `KAJ-920`
+- Orchestrator may crash on shutdown. `KAJ-931`
 - Orchestrator hangs on Shutdown. `KAJ-932`
 - Session should fail when window is not available on Mac. `KAJ-933`
 
@@ -50,36 +49,35 @@ Kandy Distant Driver for VDI Mac change log.
 
 ### Fixed
 
-- Browser crash during shutdown.`KAJ-925`
 - Orchestrator does not exit if browser crashes during shutdown. `KAJ-924`
-- Status is incorrectly reported as closed. `KAJ-1081`
+- Browser crash during shutdown.`KAJ-925`
 - Browser retries unreachable URL in loop. `KAJ-926`
+- Status is incorrectly reported as closed. `KAJ-1081`
 
 ## 1.1.0 - 2021-11-01
 
 ### Fixed
 
-- Disconnect button stays behind the video.`KAJ-753`
-- Logs now report issues about opening processes and ports conflicts. `KAJ-774`
+- Static initialization issues. `KAJ-638`
+- Citrix crash when the app resumes from sleep. `KAJ-714`
 - Flickering issue. `KAJ-750`
 - Video comes out of the Citrix Window. `KAJ-752`
-- Citrix crash when the app resumes from sleep. `KAJ-714`
+- Disconnect button stays behind the video.`KAJ-753`
+- High Latency causes Browser Renderer to Crash. `KAJ-757`
+- Logs now report issues about opening processes and ports conflicts. `KAJ-774`
+- Multiple protocol issues. `KAJ-787`
 - Comlink logs are missing. `KAJ-791`
 - Session event READY should be sent when page finish loading. `KAJ-792`
-- High Latency causes Browser Renderer to Crash. `KAJ-757`
-- Multiple protocol issues. `KAJ-787`
-- Static initialization issues. `KAJ-638`
-- Timing issue with Start Session when Mac takes too long to start. `KAJ-879`
-- Log timestamps are not in order. `KAJ-900`
 - Multiple Distant Start attempts can happens concurrently. `KAJ-879`
+- Log timestamps are not in order. `KAJ-900`
 - Browser process does not close properly. `KAJ-905`
 
 ### Added
 
-- Session Overwrite feature. `KAJ-772`
 - Enable CEF Verbose log. `KAJ-675`
-- Add CEFLogLevel as a configuration. `KAJ-810`
+- Session Overwrite feature. `KAJ-772`
 - Dynamic port allocation. `KAJ-780`
+- Add CEFLogLevel as a configuration. `KAJ-810`
 - Allow Browser to start for Mac Verification with openOnly flag. `KAJ-907`
 - Versioning for Mac bundles. `KAJ-918`
 
