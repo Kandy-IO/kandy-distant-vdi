@@ -65,7 +65,7 @@ LogLevel=debug
 The logs can be found at `/var/log/kandy/`.
 
 
-### Known Issues / Limitations
+### 5. Known Issues / Limitations
 #### Issues
 - Internal VDI error when removing device while application is running. `KAJ-1006`
 
