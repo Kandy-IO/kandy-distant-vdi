@@ -8,7 +8,7 @@ Kandy Distant Driver for VDI eLux change log.
 ## 1.6.1 - 2022-02-9
 ### Changed
 - This release is a complete refactoring to align with the new architecture on Windows and Mac.
-See the README [here](eLux/README.md).
+See the README [here](README.md).
 
 ## 1.5.2-1 - 2021-05-14
 ### Fixed
