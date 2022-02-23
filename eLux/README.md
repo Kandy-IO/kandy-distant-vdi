@@ -63,3 +63,13 @@ LogLevel=debug
 
 ### 4. Logs
 The logs can be found at `/var/log/kandy/`.
+
+
+### Known Issues / Limitations
+#### Issues
+- Internal VDI error when removing device while application is running. `KAJ-1006`
+
+#### Unreleased Fixes
+- Window can suddenly not be visible when opening and closing sessions multiple times. `KAJ-1007`
+- Quickly closing a session right after opening it will cause the VDI solution to freeze. `KAJ-1009`
+
