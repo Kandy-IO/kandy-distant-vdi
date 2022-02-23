@@ -61,4 +61,7 @@ CefLogLevel=trace
 LogLevel=debug
 ```
 
+### 4. Logs
+The logs can be found at `/var/log/kandy/`.
+
 Congratulations! You have built, signed, installed and configured the KandyDistant plugin for Citrix Workspace App on Elux!
