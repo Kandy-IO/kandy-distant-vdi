@@ -68,10 +68,13 @@ SessionOverwrite=false
 The logs can be found at `/var/log/kandy/`.
 
 ### 5. Known Issues / Limitations
-#### Issues
+
+#### Known Issues
 - Internal VDI error when removing device while application is running. `KAJ-1006`
 
 #### Unreleased Fixes
 - Window can suddenly not be visible when opening and closing sessions multiple times. `KAJ-1007`
 - Quickly closing a session right after opening it will cause the VDI solution to freeze. `KAJ-1009`
 
+#### Limitation
+- Previous verions allowed for multiple session to be create without full support. version 1.6.1 does not have multiple session support, it will be coming soon in 1.7.
