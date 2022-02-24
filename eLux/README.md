@@ -77,4 +77,4 @@ The logs can be found at `/var/log/kandy/`.
 - Quickly closing a session right after opening it will cause the VDI solution to freeze. `KAJ-1009`
 
 #### Limitation
-- Previous verions allowed for multiple session to be create without full support. version 1.6.1 does not have multiple session support, it will be coming soon in 1.7.
+- Previous versions allowed for multiple sessions to be created without full support. Version 1.6.1 does not have multiple session support, it will be delivered in 1.7.
