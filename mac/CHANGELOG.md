@@ -13,12 +13,19 @@ Kandy Distant Driver for VDI Mac change log.
 - Distant messges sent too quickly causes issues on M1. `KAJ-1023`
 - Multiple session with the same id can be created. `KAJ-1034`
 - Distant windows closes prematurely on Mac. `KAJ-1067`
+- `distant-remote` `close` function can now be used which allows the remote app to close the session it is associated with.  `KAJ-1064`
+- M1's very first send init command does not cause slowdowns and heartbeat failures anymore. `KAJ-1009`
 
 ## 1.1.4 - 2021-12-07
 
 ### Fixed
 
 - Build information is missing from logs. `KAJ-1082`
+
+### Added
+
+- `openOnly` flag can be used on the DistantBrowser executable which will run the initial one-time loading of the CEF library and exits immediatly. To be used by customer's install script. `KAJ-954` & `KAJ-990`
+
 
 ## 1.1.3 - 2021-12-06
 

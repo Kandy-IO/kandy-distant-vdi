@@ -175,4 +175,7 @@ Default values are:
 - `~/Library/Application Support/Kandy/logs`
 - `~/Library/Application Support/Kandy/cache`
 
+On M1, you can run the DistantBrowser executable with the `openOnly` flag.
+This is so that the initial one-time loading of the CEF library, which may take a several seconds, can happen.
+
 Congratulations! You have built, signed, installed and configured the KandyDistant plugin for Citrix Workspace App on MacOS!
