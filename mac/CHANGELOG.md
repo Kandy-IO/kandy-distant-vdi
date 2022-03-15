@@ -6,26 +6,45 @@ Kandy Distant Driver for VDI Mac change log.
 - This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
-
-- Orchestrator process does not close after simulating browser crash. `KAJ-716`
-- Mac session cannot start if Citrix window is not in focus. `KAJ-936`
-- Browser stays opened when orchestrator crashes. `KAJ-971`
 - Distant messges sent too quickly causes issues on M1. `KAJ-1023`
+
+## 1.2.0 - 2021-03-18
+
+### Fixed
+- Browser stays opened when orchestrator crashes. `KAJ-971`
+- Mac session cannot start if Citrix window is not in focus. `KAJ-936`
+- Orchestrator does not allow browser to restart when browser crashes. `KAJ-716`
 - Multiple session with the same id can be created. `KAJ-1034`
+- Incorrect window matching. `KAJ-1011`
+- Orchestrator & Browser get stuck waiting for each others' heartbeat. `KAJ-1029`
 - Distant windows closes prematurely on Mac. `KAJ-1067`
-- `distant-remote` `close` function can now be used which allows the remote app to close the session it is associated with.  `KAJ-1064`
+- Browser error message not sent over IPC. `KAJ-1085`
+- Orchestrator crashes after quickly creating and stopping distant sessions. `KAJ-1009`
 - M1's very first send init command does not cause slowdowns and heartbeat failures anymore. `KAJ-1009`
+- Distant window jumps to the opposing screen when the Citrix window displayed on that screen is focused upon. `KAJ-1050`
+- Dead unresponsive window remains visible when renderer process terminates. `KAJ-1098`
+- Citrix session has to be restarted for the RTC app to work after Simulating Browser Crash. `KAJ-1128`
+- Trailing directory separator in log path causes issues on some machines. `KAJ-1160`
+
+### Added
+- All HID devices can now be accessed by WebHID. `KAJ-890`
+- Instantiate one Mac window per session. `KAJ-1038`
+- Send message to remote app when window closes. `KAJ-1039`
+- Browser messages get buffered to prevent lost messages. `KAJ-1043`
+- Multi-session support. `KAJ-1007`
+- Distant Tracker updated to work with electron context isolation. `KAJ-1031`
+- Moved KandyHID preload script. `KAJ-1040`
+- Remote App can close session in via `distant.close()`. `KAJ-1103`
+- `distant-remote` `close` function can now be used which allows the remote app to close the session it is associated with.  `KAJ-1064`
+- Distant Tracker: Handle vertically stacked monitors. `KAJ-993`
+- KandyHID: Add flag to force use of DLL. `KAJ-1087`
+- Session is closed when corresponding renderer process crashes. `KAJ-1105`
 
 ## 1.1.4 - 2021-12-07
 
 ### Fixed
 
 - Build information is missing from logs. `KAJ-1082`
-
-### Added
-
-- `openOnly` flag can be used on the DistantBrowser executable which will run the initial one-time loading of the CEF library and exits immediatly. To be used by customer's install script. `KAJ-954` & `KAJ-990`
-
 
 ## 1.1.3 - 2021-12-06
 
@@ -42,6 +61,7 @@ Kandy Distant Driver for VDI Mac change log.
 ### Added
 
 - Report http connection end error (i.e DNS error). `KAJ-948`
+- `openOnly` flag can be used on the DistantBrowser executable which will run the initial one-time loading of the CEF library and exits immediatly. To be used by customer's install script. `KAJ-954` & `KAJ-990`
 
 ## 1.1.2 - 2021-11-08
 
