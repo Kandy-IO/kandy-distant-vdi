@@ -5,9 +5,6 @@ Kandy Distant Driver for VDI Mac change log.
 - This change log follows [keepachangelog.com](http://keepachangelog.com/) recommendations.
 - This project adheres to [Semantic Versioning](http://semver.org/).
 
-## [Unreleased]
-- Distant messges sent too quickly causes issues on M1. `KAJ-1023`
-
 ## 1.2.0 - 2021-03-18
 
 ### Fixed

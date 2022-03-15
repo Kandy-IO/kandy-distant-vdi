@@ -12,7 +12,8 @@ Citrix Workspace App for Mac 2012 (tested on 2106 in release 1.0.0)
 Dual Core CPU with 4 GB RAM recommended (equivalent to MacBook Air 2015 and newer)
 
 ## 2. Limitations
-Only 1 VDI session is permitted. In the event that a 2nd VDI session is requested, a Session Error response will be returned to the client application.
+- Distant messges sent too quickly causes issues on M1. `KAJ-1023`
+- No local and remote video seen on video call when the vdi mac recovers from "sleep"  action after 4 minutes. `KAJ-1127`
 
 ## 3. Installation
 
