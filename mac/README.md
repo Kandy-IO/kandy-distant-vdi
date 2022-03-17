@@ -11,22 +11,18 @@ Citrix Workspace App for Mac 2012 (tested on 2106 in release 1.0.0)
 
 Dual Core CPU with 4 GB RAM recommended (equivalent to MacBook Air 2015 and newer)
 
-## 2. Limitations
-- Distant messges sent too quickly causes issues on M1. `KAJ-1023`
-- No local and remote video seen on video call when the vdi mac recovers from "sleep"  action after 4 minutes. `KAJ-1127`
+## 2. Installation
 
-## 3. Installation
-
-### 3.1 Preparing Installation Files
+### 2.1 Preparing Installation Files
 If your Kandy Distant Driver is archived, expand the archive to yield the included files.
 
-### 3.2 Signing
+### 2.2 Signing
 To assist in signing the product components, the following 3 plist files are provided:
 - `entitlements-dylibs.plist`
 - `entitlements-browser.plist`
 - `entitlements-helpers.plist`
 
-### 3.3 Sign the Plugin
+### 2.3 Sign the Plugin
 The plugin and its dependent dynamic libraries must be signed.
 *Please note that you will need to modify paths to suit your directory structure*
 
@@ -38,8 +34,8 @@ Signing can be verified with the following commands:
 - `codesign --verify --deep --strict --verbose=2 <source path>/KandyDistant.PlugIn/Contents/Frameworks/libzmq.5.dylib`
 - `codesign --verify --deep --strict --verbose=2 <source path>/KandyDistant.PlugIn`
 
-### 3.4 Sign the Applications
-#### 3.4.1 Browser
+### 2.4 Sign the Applications
+#### 2.4.1 Browser
 Sign the dynamic libraries by running the following commands:
 - `codesign -f --timestamp -o runtime -s "YOUR CERTIFICATE NAME" <source path>/DistantBrowser.app/Contents/Frameworks/Chromium\ Embedded\ Framework.framework/Libraries/libEGL.dylib`
 - `codesign -f --timestamp -o runtime -s "YOUR CERTIFICATE NAME" <source path>/DistantBrowser.app/Contents/Frameworks/Chromium\ Embedded\ Framework.framework/Libraries/libGLESv2.dylib`
@@ -70,7 +66,7 @@ Signing can be verified with the following commands:
 - `codesign --verify --deep --strict --verbose=2 <source path>/DistantBrowser.app/Contents/Frameworks/DistantBrowser\ Helper\ \(Renderer\).app`
 - `codesign --verify --deep --strict --verbose=2 <source path>/DistantBrowser.app`
 
-#### 3.4.2 Orchestrator
+#### 2.4.2 Orchestrator
 Sign the dynamic library with the following command:
 `codesign -f --timestamp -o runtime --entitlements entitlements-dylibs.plist -s "YOUR CERTIFICATE NAME" <source path>/DistantOrchestrator.app/Contents/Frameworks/libzmq.5.dylib`
 
@@ -81,7 +77,7 @@ Verify signing with the following commands:
 - `codesign --verify --deep --strict --verbose=2 <source path>/DistantOrchestrator.app/Contents/Frameworks/libzmq.5.dylib`
 - `codesign --verify --deep --strict --verbose=2 <source path>/DistantOrchestrator.app`
 
-### 3.5 (OPTIONAL) Create Apple Disk Image
+### 2.5 (OPTIONAL) Create Apple Disk Image
 Should you choose to build your own Apple Disk Image (DMG) for your own purposes, you can follow these steps:
 1. Create an input folder
 2. Create an output folder
@@ -96,13 +92,13 @@ Should you choose to build your own Apple Disk Image (DMG) for your own purposes
 5. Verify signing:
 `codesign --verify --deep --strict --verbose=2 <output folder>/KandyDistant.dmg`
 
-## 4. Installing
+## 3. Installing
 
-### 4.1 Citrix Workspace App
+### 3.1 Citrix Workspace App
 It is expected that you have installed [Citrix Workspace App for Mac](https://www.citrix.com/downloads/workspace-app/mac/workspace-app-for-mac-latest.html).
 
 
-### 4.2 Installing Files
+### 3.2 Installing Files
 1. Ensure that you have created destination directories for the **plugin** and **applications**
 2. Copy the plugin to your preferred Citrix plugins directory:
 `cp -R <source path>/KandyDistant.PlugIn <plugin destination path>`
@@ -110,9 +106,9 @@ It is expected that you have installed [Citrix Workspace App for Mac](https://ww
 - `cp -R <source path>/DistantOrchestrator.app <application destination path>`
 - `cp -R <source path>/DistantBrowser.app <application destination path>`
 
-## 5. Configuration
+## 4. Configuration
 
-### 5.1 Setup
+### 4.1 Setup
 *The Citrix Workspace App must be configured to load the KandyDistant plugin*
 The configuration file for the Citrix Workspace App can be found here:
 `~/Library/Application\ Support/Citrix\ Receiver/Modules`
@@ -130,7 +126,7 @@ Edit the `Modules` to add the necessary settings:
 ExecutablePath = /your/path/
 ```
 
-### 5.2 Modifying Citrix Configuration
+### 4.2 Modifying Citrix Configuration
 LogPath and LogLevel can be added and modified under the KandyDistant section.
 
 ex:
@@ -149,7 +145,7 @@ Accepted log level values are:
 - debug
 - trace
 
-### 5.3 KandyLib Configuration
+### 4.3 KandyLib Configuration
 KandyLib-specific configuration can be set and modified in your `config ini` file which is expected to be found in the path provided as `ExecutablePath` in your Citrix configuration file (`Modules`):
 
 The `KandyDistant` section allows configuration flags that affect the browser container to be set.
@@ -160,7 +156,7 @@ The `KandyDistant` section allows configuration flags that affect the browser co
 - ExecutablePath: The absolute path to your execution path and configuration file
 - SessionOverwrite: When enabled, the Kandy Distant Driver handles Session Start requests by creating a new session which overwrites any existing session. Accepted values are: `true`, `false` (default)
 
-### 5.4 Sample (config.ini)
+### 4.4 Sample (config.ini)
 ```
 [KandyDistant]
 CachePath=~/Library/Application Support/Kandy/cache
@@ -170,7 +166,7 @@ ExecutablePath=/your/path
 SessionOverwrite=false
 ```
 
-## 6. Before Running
+## 5. Before Running
 Make sure that you have created appropriate directories for the KandyDistant log and the browser cache. These values should match your configuration of the Citrix `Modules` file.
 Default values are:
 - `~/Library/Application Support/Kandy/logs`
@@ -180,3 +176,9 @@ On M1, you can run the DistantBrowser executable with the `openOnly` flag.
 This is so that the initial one-time loading of the CEF library, which may take a several seconds, can happen.
 
 Congratulations! You have built, signed, installed and configured the KandyDistant plugin for Citrix Workspace App on MacOS!
+
+
+## 6. Known Issues / Limitations
+### Known Issues
+- No local and remote video seen on video call when the vdi mac recovers from "sleep"  action after 4 minutes. `KAJ-1127`
+- There are some window offset issues when in fullscreen mode. `KAJ-1112`
