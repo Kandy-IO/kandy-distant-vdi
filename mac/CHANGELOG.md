@@ -5,14 +5,29 @@ Kandy Distant Driver for VDI Mac change log.
 - This change log follows [keepachangelog.com](http://keepachangelog.com/) recommendations.
 - This project adheres to [Semantic Versioning](http://semver.org/).
 
-## [Unreleased]
+## 1.2.0 - 2021-03-18
 
-- Orchestrator process does not close after simulating browser crash. `KAJ-716`
-- Mac session cannot start if Citrix window is not in focus. `KAJ-936`
+### Fixed
 - Browser stays opened when orchestrator crashes. `KAJ-971`
-- Distant messges sent too quickly causes issues on M1. `KAJ-1023`
+- Mac session cannot start if Citrix window is not in focus. `KAJ-936`
+- Orchestrator does not allow browser to restart when browser crashes. `KAJ-716`
 - Multiple session with the same id can be created. `KAJ-1034`
+- Incorrect window matching. `KAJ-1011`
+- Orchestrator & Browser get stuck waiting for each others' heartbeat. `KAJ-1029`
 - Distant windows closes prematurely on Mac. `KAJ-1067`
+- Browser error message not sent over IPC. `KAJ-1085`
+- Orchestrator crashes after quickly creating and stopping distant sessions. `KAJ-1009`
+- M1's very first send init command does not cause slowdowns and heartbeat failures anymore. `KAJ-1009`
+- Dead unresponsive window remains visible when renderer process terminates. `KAJ-1098`
+- Orchestrator does not handle browser death correctly causing recovery mechanism to not run. `KAJ-1128`
+- Trailing directory separator in log path causes issues on some machines. `KAJ-1157`
+- Send message to remote app when window closes. `KAJ-1039`
+- Browser messages get buffered to prevent lost messages. `KAJ-1023`
+
+### Added
+- Multi-session support. `KAJ-1007`
+- Remote App can close session in via `distant.close()`. `KAJ-1103`
+- Session is closed when corresponding renderer process crashes. `KAJ-1105`
 
 ## 1.1.4 - 2021-12-07
 
@@ -35,6 +50,7 @@ Kandy Distant Driver for VDI Mac change log.
 ### Added
 
 - Report http connection end error (i.e DNS error). `KAJ-948`
+- `openOnly` flag can be used on the DistantBrowser executable which will run the initial one-time loading of the CEF library and exits immediatly. To be used by customer's install script. `KAJ-954` & `KAJ-990`
 
 ## 1.1.2 - 2021-11-08
 
