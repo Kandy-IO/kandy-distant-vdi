@@ -23,6 +23,7 @@ Kandy Distant Driver for VDI Mac change log.
 - Trailing directory separator in log path causes issues on some machines. `KAJ-1157`
 - Send message to remote app when window closes. `KAJ-1039`
 - Browser messages get buffered to prevent lost messages. `KAJ-1023`
+- Unable to create new session after connection to remote is lost. `KAJ-1047`
 
 ### Added
 - Multi-session support. `KAJ-1007`
