@@ -29,28 +29,13 @@ The `KandyDistant` section allows configuration flags that affect the browser co
 Note that the legacy section, `RibbonRTC`, will still work but `KandyDistant` will take priority if both sections contain the same flag.
 
 - CachePath: location where to store the application cache, defaults to: `/tmp/kandy/cache`.
-- CefLogLevel: The log level that CEF will use.
-    - Accepted CEF log level values are:
-        - off
-        - critical
-        - error
-        - warn
-        - info
-        - debug
-        - trace
 - CommandSwitch: Optional Command Switch arguments to be used with the browser container. Multiple command switches can be separated by a comma.
 - DebugPort: Debug port to be used for development. If no port is provided the debug port is disabled.
 - ExecutablePath: The absolute path to your execution path and configuration file
-- LogLevel: The log level that KandyDistant will use. Defaults to `info`.
-    - Accepted log level values are:
-        - off
-        - critical
-        - error
-        - warn
-        - info
-        - debug
-        - trace
 - SessionOverwrite: When enabled, the Kandy Distant Driver handles Session Start requests by creating a new session which overwrites any existing session. Accepted values are: `true`, `false` (default)
+- CefLogLevel: The log level that CEF will use. Defaults to `info`. Other available choices are `trace`, `debug`, `info`, `warn`, `error`, `critical`, or `off`. `debug` option will display verbose level 1 CEF logs.
+- VerboseLevel: Number flag indicating how verbose the CEF logs will be. Only supports `1`.
+- VerboseModules: Number flag indicating how verbose CEF logs will be on a per module basis. Where the modules are chromium modules and can be found here https://source.chromium.org/chromium/chromium/src. Number used can range from `1` to `3` and `-3` for filtering out modules. For this to work, VerboseLevel must be set to `1`.
 
 #### 3.2 Sample (kandy.ini)
 
@@ -59,10 +44,13 @@ Note that the legacy section, `RibbonRTC`, will still work but `KandyDistant` wi
 CachePath=/tmp/kandy/cache
 CommandSwitch=ignore-certificate-errors,disable-extensions,disable-gpu
 DebugPort=9222
-CefLogLevel=trace
 LogLevel=debug
 SessionOverwrite=false
+CefLogLevel=debug
+VerboseLevel=1
+VerboseModules=*webrtc*=1,*=-3
 ```
+In this example, VerboseModules will show verbose level 1 webrtc logs and will filter out all other modules.
 
 ### 4. Logs
 The logs can be found at `/var/log/kandy/`.
