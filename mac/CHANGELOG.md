@@ -5,7 +5,7 @@ Kandy Distant Driver for VDI Mac change log.
 - This change log follows [keepachangelog.com](http://keepachangelog.com/) recommendations.
 - This project adheres to [Semantic Versioning](http://semver.org/).
 
-## 1.2.0 - 2021-03-18
+## 1.2.0 - 2022-03-18
 
 ### Fixed
 - Browser stays opened when orchestrator crashes. `KAJ-971`
