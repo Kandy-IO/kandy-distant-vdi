@@ -190,12 +190,12 @@ Congratulations! You have built, signed, installed and configured the KandyDista
 ### 6.1 Multiple Display Configuration
 The Kandy Distant Driver for VDI supports multiple displays.
 
-#### Important
-*For proper FULLSCREEN operation, you must configure Mission Control to use **separate spaces** <u>This is the default setting in MacOS</u>*
+#### **<u>Important</u>**
+*For proper FULLSCREEN operation, you must configure Mission Control to use **separate spaces**. <u>This is the default setting in MacOS</u>*
 
 Here are the steps to configure Mission Control correctly for FULLSCREEN mode:
 1. Open System Preferences -> Mission Control
-2. Ensure the checkbox next to `Displays have separate Spaces` is **CHECKED**/**ACTIVE**
+2. Ensure the checkbox next to "`Displays have separate Spaces`" is **CHECKED**/**ACTIVE**
 
 
 ## 7. Known Issues / Limitations
