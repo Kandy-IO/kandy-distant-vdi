@@ -14,6 +14,9 @@ Kandy Distant Driver for VDI Windows change log.
 - Improved multi-session support on browser process. `KAJ-1118`
 - Logs will indicate if orchestrator fails to open. `KAJ-1164`
 
+- Windows: Handle browser process not opening and log the error. `KAJ-541`
+- Windows: Executables produce a dump file on system exceptions. `KAJ-1155`
+
 ### Fixed
 - Orchestrator process does not close after simulating browser crash. `KAJ-716`
 - Distant Reinitialization fails during Virus Scan. `KAK-1299`
@@ -21,16 +24,11 @@ Kandy Distant Driver for VDI Windows change log.
 - Browser Message Handler alters session state. `KAJ-1303`
 - Distant Tracker: Fixed address exception when exiting fullscreen. `KAJ-1189`
 
-### Added
-- Windows: Handle browser process not opening and log the error. `KAJ-541`
-- Windows: Executables produce a dump file on system exceptions. `KAJ-1155`
-### Fixed
 - Windows: Browser crashes on Close Session. `KAJ-1280`
 - Windows: Browser exits unexpectedly during initialization. `KAJ-1274`
 - Windows: Unable to click on Citrix & CEF window during call. `KAJ-1230`
 - Windows: `VerboseLevel` & `VerboseModules` flag now take effect & get passed to CEF. `KAJ-1177`
 - Windows: Click event not being processed. `KAJ-1048`
-
 
 
 ## 1.1.3 - 2022-01-11

@@ -8,10 +8,21 @@ Kandy Distant Driver for VDI eLux change log.
 ## 1.7.0 - 2022-06-07
 
 ### Added
+- Multiple session with the same id can be created. `KAJ-1034`
+- Reinit Commlink/Orch when heartbeat is missed. `KAJ-1247`
+- Improved multi-session support on browser process. `KAJ-1118`
+- Logs will indicate if orchestrator fails to open. `KAJ-1164`
+
 - eLux: Configuration parameter `DebugUrlEnabled` now available. `KAJ-1095`
 - eLux: Renamed kanding_distant.so  to KandyDistant.DLL. `KAJ-1210`
 
 ### Fixed
+- Orchestrator process does not close after simulating browser crash. `KAJ-716`
+- Distant Reinitialization fails during Virus Scan. `KAK-1299`
+- Browser Start Success doesn't persist all session properties. `KAJ-1307`
+- Browser Message Handler alters session state. `KAJ-1303`
+- Distant Tracker: Fixed address exception when exiting fullscreen. `KAJ-1189`
+
 - eLux: SendInit Does Not Work. `KAJ-1301`
 - eLux: Resolved segfault on CWA2104. `KAJ-1205`
 

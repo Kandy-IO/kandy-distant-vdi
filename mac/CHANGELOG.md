@@ -7,7 +7,19 @@ Kandy Distant Driver for VDI Mac change log.
 
 ## 1.7.0 - 2022-06-07
 
+### Added
+- Multiple session with the same id can be created. `KAJ-1034`
+- Reinit Commlink/Orch when heartbeat is missed. `KAJ-1247`
+- Improved multi-session support on browser process. `KAJ-1118`
+- Logs will indicate if orchestrator fails to open. `KAJ-1164`
+
 ### Fixed
+- Orchestrator process does not close after simulating browser crash. `KAJ-716`
+- Distant Reinitialization fails during Virus Scan. `KAK-1299`
+- Browser Start Success doesn't persist all session properties. `KAJ-1307`
+- Browser Message Handler alters session state. `KAJ-1303`
+- Distant Tracker: Fixed address exception when exiting fullscreen. `KAJ-1189`
+
 - MacOS: Aux window causes unnecessary hide. `KAJ-1310`
 - MacOS: CEF steals focus from CitrixViewer upon creation. `KAJ-930`
 - MacOS: CEF steals focus from CitrixViewer when clicked. `KAJ-937`
@@ -15,13 +27,11 @@ Kandy Distant Driver for VDI Mac change log.
 - MacOS: "About Citrix" auxiliary window was not being properly recognized. `KAJ-1231`
 - MacOS: Inner content is displayed at the wrong size when minimizing/unminimizing. `KAJ-1222`
 - MacOS: Distant Window now has menubar offset when in fullscreen mode. `KAJ-1112`
-
 - MacOS: Distant window orders it's Z-index behind Citrix preferences. `KAJ-1084`
 - MacOS: Distant window's contents are undisturbed by intersecting Citrix preferences. `KAJ-1084`
 - MacOS: Distant window hides behind intersecting Exit prompt. `KAJ-1166`
 - MacOS: Distant window hides behind the open Citrix taskbar. `KAJ-1167`
 - MacOS: Distant window hides whenever Citrix Viewer is no longer active (Command + tab to other program). `KAJ-1167`
-
 - MacOS: Able to reliably identify the active Citrix window in fullscreen mode, regardless of monitor / desktop configuration. `KAJ-1163`
 - MacOS: Distant window can move to any screen, regardless of monitor and desktop configuration (including monitor or desktop config mid-session). `KAJ-1165`
 
