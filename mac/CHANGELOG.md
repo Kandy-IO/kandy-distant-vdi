@@ -5,6 +5,27 @@ Kandy Distant Driver for VDI Mac change log.
 - This change log follows [keepachangelog.com](http://keepachangelog.com/) recommendations.
 - This project adheres to [Semantic Versioning](http://semver.org/).
 
+## 1.7.0 - 2022-06-07
+
+### Fixed
+- MacOS: Aux window causes unnecessary hide. `KAJ-1310`
+- MacOS: CEF steals focus from CitrixViewer upon creation. `KAJ-930`
+- MacOS: CEF steals focus from CitrixViewer when clicked. `KAJ-937`
+- MacOS: Distant Window regression - moving window while hidden does not work. `KAJ-1251`
+- MacOS: "About Citrix" auxiliary window was not being properly recognized. `KAJ-1231`
+- MacOS: Inner content is displayed at the wrong size when minimizing/unminimizing. `KAJ-1222`
+- MacOS: Distant Window now has menubar offset when in fullscreen mode. `KAJ-1112`
+
+- MacOS: Distant window orders it's Z-index behind Citrix preferences. `KAJ-1084`
+- MacOS: Distant window's contents are undisturbed by intersecting Citrix preferences. `KAJ-1084`
+- MacOS: Distant window hides behind intersecting Exit prompt. `KAJ-1166`
+- MacOS: Distant window hides behind the open Citrix taskbar. `KAJ-1167`
+- MacOS: Distant window hides whenever Citrix Viewer is no longer active (Command + tab to other program). `KAJ-1167`
+
+- MacOS: Able to reliably identify the active Citrix window in fullscreen mode, regardless of monitor / desktop configuration. `KAJ-1163`
+- MacOS: Distant window can move to any screen, regardless of monitor and desktop configuration (including monitor or desktop config mid-session). `KAJ-1165`
+
+
 ## 1.2.0 - 2022-03-18
 
 ### Fixed

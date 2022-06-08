@@ -5,6 +5,17 @@ Kandy Distant Driver for VDI eLux change log.
 - This change log follows [keepachangelog.com](http://keepachangelog.com/) recommendations.
 - This project adheres to [Semantic Versioning](http://semver.org/), however, eLux packages also include a -X identifier, which represents the version of the eLux package
 
+## 1.7.0 - 2022-06-07
+
+### Added
+- eLux: Configuration parameter `DebugUrlEnabled` now available. `KAJ-1095`
+- eLux: Renamed kanding_distant.so  to KandyDistant.DLL. `KAJ-1210`
+
+### Fixed
+- eLux: SendInit Does Not Work. `KAJ-1301`
+- eLux: Resolved segfault on CWA2104. `KAJ-1205`
+
+
 ## 1.6.1 - 2022-02-9
 ### Changed
 - This release is a complete refactoring to align with the new architecture on Windows and Mac.

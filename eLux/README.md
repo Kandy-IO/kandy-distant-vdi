@@ -36,6 +36,7 @@ Note that the legacy section, `RibbonRTC`, will still work but `KandyDistant` wi
 - CefLogLevel: The log level that CEF will use. Defaults to `info`. Other available choices are `trace`, `debug`, `info`, `warn`, `error`, `critical`, or `off`. `debug` option will display verbose level 1 CEF logs.
 - VerboseLevel: Number flag indicating how verbose the CEF logs will be. Only supports `1`.
 - VerboseModules: Number flag indicating how verbose CEF logs will be on a per module basis. Where the modules are chromium modules and can be found here https://source.chromium.org/chromium/chromium/src. Number used can range from `1` to `3` and `-3` for filtering out modules. For this to work, VerboseLevel must be set to `1`.
+- DebugUrlEnabled: Can be set to `true` or a non zero integer value. When starting a new session, we can specify a url such as `chrome://version` and a free window with detailed version information comes up.
 
 #### 3.2 Sample (kandy.ini)
 
