@@ -18,10 +18,9 @@ Kandy Distant Driver for VDI eLux change log.
 
 ### Fixed
 - Orchestrator process does not close after simulating browser crash. `KAJ-716`
-- Distant Reinitialization fails during Virus Scan. `KAK-1299`
+- Distant Reinitialization fails during Virus Scan. `KAJ-1299`
 - Browser Start Success doesn't persist all session properties. `KAJ-1307`
 - Browser Message Handler alters session state. `KAJ-1303`
-- Distant Tracker: Fixed address exception when exiting fullscreen. `KAJ-1189`
 
 - eLux: SendInit Does Not Work. `KAJ-1301`
 - eLux: Resolved segfault on CWA2104. `KAJ-1205`

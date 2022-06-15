@@ -19,10 +19,9 @@ Kandy Distant Driver for VDI Windows change log.
 
 ### Fixed
 - Orchestrator process does not close after simulating browser crash. `KAJ-716`
-- Distant Reinitialization fails during Virus Scan. `KAK-1299`
+- Distant Reinitialization fails during Virus Scan. `KAJ-1299`
 - Browser Start Success doesn't persist all session properties. `KAJ-1307`
 - Browser Message Handler alters session state. `KAJ-1303`
-- Distant Tracker: Fixed address exception when exiting fullscreen. `KAJ-1189`
 
 - Windows: Browser crashes on Close Session. `KAJ-1280`
 - Windows: Browser exits unexpectedly during initialization. `KAJ-1274`
