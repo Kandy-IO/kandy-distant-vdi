@@ -201,4 +201,5 @@ Here are the steps to configure Mission Control correctly for FULLSCREEN mode:
 ## 7. Known Issues / Limitations
 ### Known Issues
 - No local and remote video seen on video call when the vdi mac recovers from "sleep"  action after 4 minutes. `KAJ-1127`
-- Fullscreen mode with multiple monitors only functions correctly when Mission Control's *Displays have separate Spaces* is set to the default *checked* setting `Will not fix`
+- Fullscreen mode with multiple monitors only functions correctly when Mission Control's *Displays have separate Spaces* is set to the default *checked* setting
+- Fullscreen mode only functions correctly when Citrix is configured to use ALL monitors. `KAJ-1314`
