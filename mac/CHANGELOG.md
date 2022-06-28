@@ -14,6 +14,9 @@ Kandy Distant Driver for VDI Mac change log.
 - Logs will indicate if orchestrator fails to open. `KAJ-1164`
 
 ### Fixed
+- Citrix Virtual Driver: Do not exit. `KAJ-1350`
+- Commlink Crash on launching Citrix session. `KAJ-1340`
+- Distant Reinitialization fails during Virus Scan. `KAJ-1299`
 - Orchestrator process does not close after simulating browser crash. `KAJ-716`
 - Distant Reinitialization fails during Virus Scan. `KAJ-1299`
 - Browser Start Success doesn't persist all session properties. `KAJ-1307`

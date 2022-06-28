@@ -18,6 +18,9 @@ Kandy Distant Driver for VDI Windows change log.
 - Windows: Executables produce a dump file on system exceptions. `KAJ-1155`
 
 ### Fixed
+- Citrix Virtual Driver: Do not exit. `KAJ-1350`
+- Commlink Crash on launching Citrix session. `KAJ-1340`
+- Distant Reinitialization fails during Virus Scan. `KAJ-1299`
 - Orchestrator process does not close after simulating browser crash. `KAJ-716`
 - Distant Reinitialization fails during Virus Scan. `KAJ-1299`
 - Browser Start Success doesn't persist all session properties. `KAJ-1307`
