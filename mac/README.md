@@ -191,9 +191,9 @@ Congratulations! You have built, signed, installed and configured the KandyDista
 The Kandy Distant Driver for VDI supports multiple displays as of version 1.7
 
 #### **<u>Important</u>**
-*For proper FULLSCREEN operation, you must configure Mission Control to use **separate spaces**. <u>This is the default setting in MacOS</u>*
+*For proper FULLSCREEN operation, you should configure Mission Control to use **separate spaces**. <u>This is the default setting in MacOS</u>*
 
-Here are the steps to configure Mission Control correctly for FULLSCREEN mode:
+Here are the steps to optimize Misson Control for FULLSCREEN mode:
 1. Open System Preferences -> Mission Control
 2. Ensure the checkbox next to "`Displays have separate Spaces`" is **CHECKED**/**ACTIVE**
 
@@ -201,5 +201,5 @@ Here are the steps to configure Mission Control correctly for FULLSCREEN mode:
 ## 7. Known Issues / Limitations
 ### Known Issues
 - No local and remote video seen on video call when the vdi mac recovers from "sleep"  action after 4 minutes. `KAJ-1127`
-- Fullscreen mode with multiple monitors only functions correctly when Mission Control's *Displays have separate Spaces* is set to the default *checked* setting
-- Fullscreen mode only functions correctly when Citrix is configured to use ALL monitors. `KAJ-1314`
+- Fullscreen mode with multiple monitors functions best when Mission Control's *Displays have separate Spaces* is set to the default *checked* setting
+- Fullscreen mode functions best when Citrix is configured to use ALL monitors. `KAJ-1314`
