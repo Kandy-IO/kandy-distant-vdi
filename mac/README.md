@@ -202,4 +202,3 @@ When *not* using the Citrix Workspace App in fullscreen mode, you must modify yo
 ## 7. Known Issues / Limitations
 ### Known Issues
 - No local and remote video seen on video call when the vdi mac recovers from "sleep"  action after 4 minutes. `KAJ-1127`
-- There are some window offset issues when in fullscreen mode. `KAJ-1112`
