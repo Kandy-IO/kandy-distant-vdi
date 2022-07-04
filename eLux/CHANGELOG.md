@@ -17,6 +17,7 @@ Kandy Distant Driver for VDI eLux change log.
 - eLux: Renamed kanding_distant.so  to KandyDistant.DLL. `KAJ-1210`
 
 ### Fixed
+- Citrix hangs when coming out of eLux Thin Client sleep. `KAJ-1355`
 - Citrix Virtual Driver: Do not exit. `KAJ-1350`
 - Commlink Crash on launching Citrix session. `KAJ-1340`
 - Distant Reinitialization fails during Virus Scan. `KAJ-1299`
@@ -24,9 +25,12 @@ Kandy Distant Driver for VDI eLux change log.
 - Distant Reinitialization fails during Virus Scan. `KAJ-1299`
 - Browser Start Success doesn't persist all session properties. `KAJ-1307`
 - Browser Message Handler alters session state. `KAJ-1303`
+- Quickly closing a session right after opening it will cause the VDI solution to freeze. `KAJ-1009`
+- Window can suddenly not be visible when opening and closing sessions multiple times. `KAJ-1007`
 
 - eLux: SendInit Does Not Work. `KAJ-1301`
 - eLux: Resolved segfault on CWA2104. `KAJ-1205`
+- eLux: Internal VDI error when removing device while application is running. `KAJ-1006`
 
 
 ## 1.6.1 - 2022-02-9
