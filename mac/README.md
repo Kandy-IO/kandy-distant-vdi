@@ -201,5 +201,5 @@ Here are the steps to optimize Misson Control for FULLSCREEN mode:
 ## 7. Known Issues / Limitations
 ### Known Issues
 - No local and remote video seen on video call when the vdi mac recovers from "sleep"  action after 4 minutes. `KAJ-1127`
-- Fullscreen mode with multiple monitors functions best when Mission Control's *Displays have separate Spaces* is set to the default *checked* setting
+- The remote app window functions best in fullscreen mode when Mission Control's *Displays have separate Spaces* is set to the default *checked* setting
 - The remote app window functions best in fullscreen mode when Citrix is configured to use ALL monitors. `KAJ-1314`
