@@ -6,7 +6,7 @@ Kandy Distant Driver for VDI Windows change log.
 - This project adheres to [Semantic Versioning](http://semver.org/).
 
 
-## 1.7.0 - 2022-06-07
+## 1.7.0 - 2022-07-12
 
 ### Added
 - Multiple session with the same id can be created. `KAJ-1034`
@@ -14,8 +14,8 @@ Kandy Distant Driver for VDI Windows change log.
 - Improved multi-session support on browser process. `KAJ-1118`
 - Logs will indicate if orchestrator fails to open. `KAJ-1164`
 
-- Windows: Handle browser process not opening and log the error. `KAJ-541`
-- Windows: Executables produce a dump file on system exceptions. `KAJ-1155`
+- Handle browser process not opening and log the error. `KAJ-541`
+- Executables produce a dump file on system exceptions. `KAJ-1155`
 
 ### Fixed
 - Citrix Virtual Driver: Do not exit. `KAJ-1350`
@@ -26,11 +26,11 @@ Kandy Distant Driver for VDI Windows change log.
 - Browser Start Success doesn't persist all session properties. `KAJ-1307`
 - Browser Message Handler alters session state. `KAJ-1303`
 
-- Windows: Browser crashes on Close Session. `KAJ-1280`
-- Windows: Browser exits unexpectedly during initialization. `KAJ-1274`
-- Windows: Unable to click on Citrix & CEF window during call. `KAJ-1230`
-- Windows: `VerboseLevel` & `VerboseModules` flag now take effect & get passed to CEF. `KAJ-1177`
-- Windows: Click event not being processed. `KAJ-1048`
+- Browser crashes on Close Session. `KAJ-1280`
+- Browser exits unexpectedly during initialization. `KAJ-1274`
+- Unable to click on Citrix & CEF window during call. `KAJ-1230`
+- `VerboseLevel` & `VerboseModules` flag now take effect & get passed to CEF. `KAJ-1177`
+- Click event not being processed. `KAJ-1048`
 
 
 ## 1.1.3 - 2022-01-11

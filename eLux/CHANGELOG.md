@@ -5,7 +5,7 @@ Kandy Distant Driver for VDI eLux change log.
 - This change log follows [keepachangelog.com](http://keepachangelog.com/) recommendations.
 - This project adheres to [Semantic Versioning](http://semver.org/), however, eLux packages also include a -X identifier, which represents the version of the eLux package
 
-## 1.7.0 - 2022-06-07
+## 1.7.0 - 2022-07-12
 
 ### Added
 - Multiple session with the same id can be created. `KAJ-1034`
@@ -13,8 +13,8 @@ Kandy Distant Driver for VDI eLux change log.
 - Improved multi-session support on browser process. `KAJ-1118`
 - Logs will indicate if orchestrator fails to open. `KAJ-1164`
 
-- eLux: Configuration parameter `DebugUrlEnabled` now available. `KAJ-1095`
-- eLux: Renamed kanding_distant.so  to KandyDistant.DLL. `KAJ-1210`
+- Configuration parameter `DebugUrlEnabled` now available. `KAJ-1095`
+- Renamed kanding_distant.so  to KandyDistant.DLL. `KAJ-1210`
 
 ### Fixed
 - PENDING: Citrix hangs when coming out of eLux Thin Client sleep. `KAJ-1355`
@@ -28,9 +28,9 @@ Kandy Distant Driver for VDI eLux change log.
 - Quickly closing a session right after opening it will cause the VDI solution to freeze. `KAJ-1009`
 - Window can suddenly not be visible when opening and closing sessions multiple times. `KAJ-1007`
 
-- eLux: SendInit Does Not Work. `KAJ-1301`
-- eLux: Resolved segfault on CWA2104. `KAJ-1205`
-- eLux: Internal VDI error when removing device while application is running. `KAJ-1006`
+- SendInit Does Not Work. `KAJ-1301`
+- Resolved segfault on CWA2104. `KAJ-1205`
+- Internal VDI error when removing device while application is running. `KAJ-1006`
 
 ### Changed
 - Code Signing certificate was changed to use a different certificate authority. See the [README.md](https://github.com/Kandy-IO/kandy-distant-vdi/blob/KAJ-1201-1195/eLux/README.md) 
