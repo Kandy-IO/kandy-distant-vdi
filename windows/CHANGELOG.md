@@ -9,22 +9,20 @@ Kandy Distant Driver for VDI Windows change log.
 ## 1.7.0 - 2022-07-12
 
 ### Added
-- Multiple session with the same id can be created. `KAJ-1034`
-- Reinit Commlink/Orch when heartbeat is missed. `KAJ-1247`
-- Improved multi-session support on browser process. `KAJ-1118`
-- Logs will indicate if orchestrator fails to open. `KAJ-1164`
+- Support for multiple distant sessions. `KAJ-1030`
+- Logs to indicate if orchestrator fails to open. `KAJ-1164`
 
 - Handle browser process not opening and log the error. `KAJ-541`
 - Executables produce a dump file on system exceptions. `KAJ-1155`
 
 ### Fixed
-- Citrix Virtual Driver: Do not exit. `KAJ-1350`
+- Issue when comming out of sleep / hibernate. `KAJ-1247`
 - Commlink Crash on launching Citrix session. `KAJ-1340`
 - Distant Reinitialization fails during Virus Scan. `KAJ-1299`
-- Orchestrator process does not close after simulating browser crash. `KAJ-716`
-- Distant Reinitialization fails during Virus Scan. `KAJ-1299`
-- Browser Start Success doesn't persist all session properties. `KAJ-1307`
+- Orchestrator process does not close after browser crash. `KAJ-716`
 - Browser Message Handler alters session state. `KAJ-1303`
+- Quickly closing a session right after opening it will cause the VDI solution to freeze. `KAJ-1009`
+- Opening and closing sessions multiple times can cause the Window to disapear. `KAJ-1007`
 
 - Browser crashes on Close Session. `KAJ-1280`
 - Browser exits unexpectedly during initialization. `KAJ-1274`
