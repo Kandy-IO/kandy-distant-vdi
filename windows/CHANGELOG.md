@@ -26,9 +26,9 @@ Kandy Distant Driver for VDI Windows change log.
 
 - Browser crashes on Close Session. `KAJ-1280`
 - Browser exits unexpectedly during initialization. `KAJ-1274`
-- Unable to click on Citrix & CEF window during call. `KAJ-1230`
-- `VerboseLevel` & `VerboseModules` flag now take effect & get passed to CEF. `KAJ-1177`
-- Click event not being processed. `KAJ-1048`
+- Unable to click on Citrix & Distant window during call. `KAJ-1230`
+- `VerboseLevel` & `VerboseModules` configuration do not take effect. `KAJ-1177`
+- Click event not are being processed. `KAJ-1048`
 
 
 ## 1.1.3 - 2022-01-11
