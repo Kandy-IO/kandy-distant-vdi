@@ -20,19 +20,12 @@ Kandy Distant Driver for VDI Mac change log.
 - Quickly closing a session right after opening it will cause the VDI solution to freeze. `KAJ-1009`
 - Opening and closing sessions multiple times can cause the Window to disapear. `KAJ-1007`
 
-- Aux window causes unnecessary hide. `KAJ-1310`
-- CEF steals focus from CitrixViewer upon creation. `KAJ-930`
-- CEF steals focus from CitrixViewer when clicked. `KAJ-937`
-- Distant Window regression - moving window while hidden does not work. `KAJ-1251`
-- "About Citrix" auxiliary window was not being properly recognized. `KAJ-1231`
-- Inner content is displayed at the wrong size when minimizing/unminimizing. `KAJ-1222`
-- Distant Window now has menubar offset when in fullscreen mode. `KAJ-1112`
-- Distant window scales, moves, & z-orders correctly relative to Citrix Viewer preference window. `KAJ-1084`
-- Distant window hides behind intersecting Exit prompt. `KAJ-1166`
-- Distant window hides behind the open Citrix taskbar. `KAJ-1167`
-- Distant window hides whenever Citrix Viewer is no longer active (Command + tab to other program). `KAJ-1167`
-- Able to reliably identify the active Citrix window in fullscreen mode, regardless of monitor / desktop configuration. `KAJ-1163`
-- Distant window can move to any screen, regardless of monitor and desktop configuration (including monitor or desktop config mid-session). `KAJ-1165`
+- Distant steals focus from CitrixViewer upon creation. `KAJ-930`
+- Distant steals focus from CitrixViewer when clicked. `KAJ-937`
+- Distant window has the wrong size when minimizing/unminimizing. `KAJ-1222`
+- Distant windows blocks auxiliairy Citrix windows (About, Preferences, Exit, Taskbar). `KAJ-1084` `KAJ-1166` `KAJ-1167` `KAJ-1231` `KAJ-1310`
+- Display issues in fullscreen mode. `KAJ-1163` `KAJ-1112`
+- Display issues with multiple monitors. `KAJ-1165` `KAJ-1113` `KAJ-1050`
 
 
 ## 1.2.0 - 2022-03-18
