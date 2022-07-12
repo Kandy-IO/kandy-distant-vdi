@@ -5,6 +5,29 @@ Kandy Distant Driver for VDI Mac change log.
 - This change log follows [keepachangelog.com](http://keepachangelog.com/) recommendations.
 - This project adheres to [Semantic Versioning](http://semver.org/).
 
+## 1.7.0 - 2022-07-12
+
+### Added
+- Support for multiple distant sessions. `KAJ-1030`
+- Logs to indicate if orchestrator fails to open. `KAJ-1164`
+
+### Fixed
+- Issue when comming out of sleep / hibernate. `KAJ-1247`
+- Commlink Crash on launching Citrix session. `KAJ-1340`
+- Distant Reinitialization fails during Virus Scan. `KAJ-1299`
+- Orchestrator process does not close after browser crash. `KAJ-716`
+- Browser Message Handler alters session state. `KAJ-1303`
+- Quickly closing a session right after opening it will cause the VDI solution to freeze. `KAJ-1009`
+- Opening and closing sessions multiple times can cause the Window to disapear. `KAJ-1007`
+
+- Distant steals focus from CitrixViewer upon creation. `KAJ-930`
+- Distant steals focus from CitrixViewer when clicked. `KAJ-937`
+- Distant window has the wrong size when minimizing/unminimizing. `KAJ-1222`
+- Distant windows blocks auxiliairy Citrix windows (About, Preferences, Exit, Taskbar). `KAJ-1084` `KAJ-1166` `KAJ-1167` `KAJ-1231` `KAJ-1310`
+- Display issues in fullscreen mode. `KAJ-1163` `KAJ-1112`
+- Display issues with multiple monitors. `KAJ-1165` `KAJ-1113` `KAJ-1050`
+
+
 ## 1.2.0 - 2022-03-18
 
 ### Fixed

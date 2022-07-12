@@ -36,6 +36,7 @@ Note that the legacy section, `RibbonRTC`, will still work but `KandyDistant` wi
 - CefLogLevel: The log level that CEF will use. Defaults to `info`. Other available choices are `trace`, `debug`, `info`, `warn`, `error`, `critical`, or `off`. `debug` option will display verbose level 1 CEF logs.
 - VerboseLevel: Number flag indicating how verbose the CEF logs will be. Only supports `1`.
 - VerboseModules: Number flag indicating how verbose CEF logs will be on a per module basis. Where the modules are chromium modules and can be found here https://source.chromium.org/chromium/chromium/src. Number used can range from `1` to `3` and `-3` for filtering out modules. For this to work, VerboseLevel must be set to `1`.
+- DebugUrlEnabled: When enabled, a new session can be started with the debug url `http://locahost:DebugPort` or a `chrome://` url. Whith thse special urls the session will be opened in a new window outside of the Citrix window. ex: Specifying a new session with the following url `chrome://version` will open the chromium version information. Accepted values are: `true`, `false` (default)
 
 #### 3.2 Sample (kandy.ini)
 
@@ -49,6 +50,7 @@ SessionOverwrite=false
 CefLogLevel=debug
 VerboseLevel=1
 VerboseModules=*webrtc*=1,*=-3
+DebugUrlEnabled=true
 ```
 In this example, VerboseModules will show verbose level 1 webrtc logs and will filter out all other modules.
 
@@ -56,13 +58,3 @@ In this example, VerboseModules will show verbose level 1 webrtc logs and will f
 The logs can be found at `/var/log/kandy/`.
 
 ### 5. Known Issues / Limitations
-
-#### Known Issues
-- Internal VDI error when removing device while application is running. `KAJ-1006`
-
-#### Unreleased Fixes
-- Window can suddenly not be visible when opening and closing sessions multiple times. `KAJ-1007`
-- Quickly closing a session right after opening it will cause the VDI solution to freeze. `KAJ-1009`
-
-#### Limitation
-- Previous versions allowed for multiple sessions to be created without full support. Version 1.6.1 does not have multiple session support, it will be delivered in 1.7.

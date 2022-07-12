@@ -12,11 +12,7 @@ Citrix Workspace App for Windows 2012+ (tested on 2102 in release 1.0.0)
 
 Dual Core CPU with 4 GB RAM recommended.
 
-### 2. Limitations
-
-In the event that 2 simultaneous VDI sessions are opened, only the first session will be able to use the Distant driver.
-
-### 3. Installation
+### 2. Installation
 
 There is no installer provided to install the driver, developers needs to create an installer for their customers to use. The driver files need to be installed in the Citrix ICA program folder and the program files in a folder of their choice (referred below as the Executable Path). Then the Windows Registry needs to be updated to load the driver and point to the program folder. We provide a PowerShell script as a reference on how these steps can be acheived.
 
@@ -45,7 +41,7 @@ In order for the Driver to be loaded by the Citrix Workspace App it needs to be 
  - DriverNameWin32 = KANDY_DISTANT.DLL
  - ExecutablePath = *EXECUTABLE_PATH_HERE* (ex: C:\Program Files\Kandy)
 
-### 4. Configuration
+### 3. Configuration
 
 The configuration is loaded partially from config.ini and partially from the registry.
 
@@ -84,3 +80,6 @@ VerboseLevel=1
 VerboseModules=*webrtc*=1,*=-3
 ```
 In this example, VerboseModules will show verbose level 1 webrtc logs and will filter out all other modules.
+
+
+### 4. Known Issues / Limitations

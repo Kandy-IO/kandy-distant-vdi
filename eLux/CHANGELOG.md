@@ -5,6 +5,32 @@ Kandy Distant Driver for VDI eLux change log.
 - This change log follows [keepachangelog.com](http://keepachangelog.com/) recommendations.
 - This project adheres to [Semantic Versioning](http://semver.org/), however, eLux packages also include a -X identifier, which represents the version of the eLux package
 
+## 1.7.0 - 2022-07-12
+
+### Added
+- Support for multiple distant sessions. `KAJ-1030`
+- Logs to indicate if orchestrator fails to open. `KAJ-1164`
+
+- Feature to enable Chrome developper tools (eLux only). See DebugUrlEnabled in the Configuration section in [README.md](https://github.com/Kandy-IO/kandy-distant-vdi/blob/master/eLux/README.md) . `KAJ-1095`
+
+### Fixed
+- Issue when comming out of sleep / hibernate. `KAJ-1247`
+- Commlink Crash on launching Citrix session. `KAJ-1340`
+- Distant Reinitialization fails during Virus Scan. `KAJ-1299`
+- Orchestrator process does not close after browser crash. `KAJ-716`
+- Browser Message Handler alters session state. `KAJ-1303`
+- Quickly closing a session right after opening it will cause the VDI solution to freeze. `KAJ-1009`
+- Opening and closing sessions multiple times can cause the Window to disapear. `KAJ-1007`
+
+- Resolved segfault on CWA2104. `KAJ-1205`
+- Internal VDI error when removing device while application is running. `KAJ-1006`
+- Citrix hangs when coming out of sleep on eLux. `KAJ-1355`
+
+### Changed
+- Renamed the Virtual Driver file from kanding_distant.so to KandyDistant.DLL. `KAJ-1210`
+- Code Signing certificate was changed to use a different certificate authority. See the [README.md](https://github.com/Kandy-IO/kandy-distant-vdi/blob/KAJ-1201-1195/eLux/README.md) 
+
+
 ## 1.6.1 - 2022-02-9
 ### Changed
 - This release is a complete refactoring to align with the new architecture on Windows and Mac.
