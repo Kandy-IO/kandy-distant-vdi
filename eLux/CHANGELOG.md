@@ -11,7 +11,7 @@ Kandy Distant Driver for VDI eLux change log.
 - Support for multiple distant sessions. `KAJ-1030`
 - Logs to indicate if orchestrator fails to open. `KAJ-1164`
 
-- Feature to enable Chrome developper tools (eLux only). See DebugUrlEnabled in the Configuration section in [README.md](https://github.com/Kandy-IO/kandy-distant-vdi/blob/master/eLux/README.md) . `KAJ-1095`
+- Feature to enable Chrome developer tools (eLux only). See DebugUrlEnabled in the Configuration section in [README.md](https://github.com/Kandy-IO/kandy-distant-vdi/blob/master/eLux/README.md) . `KAJ-1095`
 
 ### Fixed
 - Issue when comming out of sleep / hibernate. `KAJ-1247`
