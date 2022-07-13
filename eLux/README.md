@@ -6,15 +6,14 @@ This driver adds support for [Citrix Workspace App for Linux](https://docs.citri
 
 ### 1. eLux Package Signature
 
-You can download the following Root and Code Signing CA certificate from digicert
+Validating package signatures requires the following certificates from [Sectigo's main page](https://support.sectigo.com/articles/Knowledge/Sectigo-Intermediate-Certificates):
 
-DigiCert Assured ID Root CA:
+Root Certificate:<br>
+[AAA Certificate Services](https://comodoca.my.salesforce.com/sfc/p/1N000002Ljih/a/3l000000sYVG/4l82xrBbMv8Ndh.SBoUvQs0BjYk_pJlb4Sa92KfrsxY)
 
-https://cacerts.digicert.com/DigiCertAssuredIDRootCA.crt.pem
-
-DigiCert SHA2 Assured ID Code Signing CA:
-
-https://cacerts.digicert.com/DigiCertSHA2AssuredIDCodeSigningCA.crt.pem
+Intermediate Certificates:<br>
+[Sectigo Public Code Signing CA R36](https://comodoca.my.salesforce.com/sfc/p/#1N000002Ljih/a/3l000000oAhy/QCCby12C7cYo50nNyic6AuG1KFcwe1rDn1EknfTaUzY)<br>
+[SectigoPublicCodeSigningRootR46_AAA [ Cross Signed ]](https://comodoca.my.salesforce.com/sfc/p/1N000002Ljih/a/3l000000sYVB/t5kHfAZUjSL8NyXDwAQ3OhmfoTNSOnWgpnTmksjVyJc)
 
 ### 2. Browser Container Certificates
 
