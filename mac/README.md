@@ -186,8 +186,19 @@ This is so that the initial one-time loading of the CEF library, which may take 
 
 Congratulations! You have built, signed, installed and configured the KandyDistant plugin for Citrix Workspace App on MacOS!
 
-## 6. User Environment
-### 6.1 Multiple Display Configuration
+### 6. Logs
+By default, the logs can be found at `~/Library/Application Support/Kandy/logs`.
+
+#### 6.1 Log Rotation
+Each time the VDI driver is run, log files with the following format will be created:
+- `distant-<pid>.log` - The vdi driver logs.
+- `browser_console-<pid>.log` - The browser process CEF logs.
+
+The maximum number of distant log files is 5.
+When the VDI Driver is run and there are 5 or more distant log files, they will be rotated.
+
+## 7. User Environment
+### 7.1 Multiple Display Configuration
 The Kandy Distant Driver for VDI supports multiple displays as of version 1.7
 
 #### **<u>Important</u>**
@@ -198,7 +209,7 @@ Here are the steps to optimize Misson Control for FULLSCREEN mode:
 2. Ensure the checkbox next to "`Displays have separate Spaces`" is **CHECKED**/**ACTIVE**
 
 
-## 7. Known Issues / Limitations
+## 8. Known Issues / Limitations
 ### Known Issues
 - No local and remote video seen on video call when the vdi mac recovers from "sleep"  action after 4 minutes. `KAJ-1127`
 - The remote app window functions best in fullscreen mode when Mission Control's *Displays have separate Spaces* is set to the default *checked* setting
