@@ -61,7 +61,6 @@ Each time the VDI driver is run, log files with the following format will be cre
 - `distant-<pid>.log` - The vdi driver logs.
 - `browser_console-<pid>.log` - The browser process CEF logs.
 
-The maximum number of distant log files is 5.
-When the VDI Driver is run and there are 5 or more distant log files, they will be rotated.
+When the VDI Driver is run, log files that are 7 or more days old will be deleted.
 
 ### 5. Known Issues / Limitations
