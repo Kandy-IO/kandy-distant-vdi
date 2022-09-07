@@ -81,5 +81,15 @@ VerboseModules=*webrtc*=1,*=-3
 ```
 In this example, VerboseModules will show verbose level 1 webrtc logs and will filter out all other modules.
 
+### 4. Logs
+By default, the logs can be found at `<user>/AppData/Roaming/Kandy/DistantVDI/Logs`.
 
-### 4. Known Issues / Limitations
+#### 4.1 Log Rotation
+Each time the VDI driver is run, log files with the following format will be created:
+- `distant-<pid>.log` - The vdi driver logs.
+- `browser_console-<pid>.log` - The browser process CEF logs.
+
+When the VDI Driver is run, log files that are 7 or more days old will be deleted.
+
+
+### 5. Known Issues / Limitations
