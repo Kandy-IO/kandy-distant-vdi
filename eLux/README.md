@@ -63,4 +63,23 @@ Each time the VDI driver is run, log files with the following format will be cre
 
 When the VDI Driver is run, log files that are 7 or more days old will be deleted.
 
-### 5. Known Issues / Limitations
+## 5. Sleep & Disconnect
+### 5.1 Sleep
+Waking from Sleep
+- Less than 3 minutes:
+    - The viewer will resume and the orchestrator & browser process will resume
+- More than 3 minutes:
+    - The Citrix viewer may exit in which case all distant processes shall terminate
+    - The Citrix viewer may exit and restart in which case...
+        - The distant session may restart by itself
+        - Or it may not in which case restarting the app will create a new distant session
+### 5.2 Disconnect
+Orchestrator will keep restarting.
+A prompt will appear asking to reconnect.
+If click;
+- Reconnect
+    - Citrix will reopen a connection and resume the existing orchestrator (however the previous browser sessions will not be present anymore and app will need to be restarted).
+- Cancel
+    - Citrix will close the connection.
+
+### 6. Known Issues / Limitations

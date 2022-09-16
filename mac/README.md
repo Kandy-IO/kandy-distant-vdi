@@ -207,8 +207,30 @@ Here are the steps to optimize Misson Control for FULLSCREEN mode:
 1. Open System Preferences -> Mission Control
 2. Ensure the checkbox next to "`Displays have separate Spaces`" is **CHECKED**/**ACTIVE**
 
+## 8. Sleep & Disconnect
+### 8.1 Sleep
+Waking from sleep
+- Less than 3 minutes:
+    - The Citrix viewer will resume and the orchestrator & browser process will resume
+- More than 3 minutes:
+    - The Citrix viewer may exit in which case all distant processes shall terminate
+    - The Citrix viewer may exit and restart in which case...
+        - A new orchestrator will spawn
+        - The distant session may restart by itself
+        - Or it may not in which case restarting the app will create a new distant session
 
-## 8. Known Issues / Limitations
+### 8.2 Disconnect
+Citrix will be greyed-out/unclickable and will indicate that it has lost the connection.
+After 5 minutes of no connection, Citrix will close.
+If connection is restored 
+- Within 3 minutes
+    - Citrix will resume
+- After 3 minutes
+    - orchestrator will shutdown
+    - new orchestrators will keep trying to start
+    - Citrix will resume and the last new orchestrator will continue running
+
+## 9. Known Issues / Limitations
 ### Known Issues
 - No local and remote video seen on video call when the vdi mac recovers from "sleep"  action after 4 minutes. `KAJ-1127`
 - The remote app window functions best in fullscreen mode when Mission Control's *Displays have separate Spaces* is set to the default *checked* setting
