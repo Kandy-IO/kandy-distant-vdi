@@ -92,27 +92,21 @@ Each time the VDI driver is run, log files with the following format will be cre
 When the VDI Driver is run, log files that are 7 or more days old will be deleted.
 
 ## 5. Sleep & Disconnect
+CWA (Citrix Workspace App) handles computer sleep and network disconnects somewhat differently on each OS. This has some impact on Distant and your Distant sessions. It is important that your application can handle these scenarios. Please refer to the sub sections for more information.
+
 ### 5.1 Sleep
-Waking from sleep
-- Less than 3 minutes:
-    - The Citrix viewer will resume and the orchestrator & browser process will resume
-- More than 3 minutes:
-    - The Citrix viewer may exit in which case all distant processes shall terminate
-    - The Citrix viewer may exit and restart in which case...
-        - A new orchestrator will spawn
-        - The distant session may restart by itself
-        - Or it may not in which case restarting the app will create a new distant session
+When waking from a short sleep (less than 3 minutes) the CWA will resume and your Distant session will be available.
+
+When waking from a long sleep (more than 3 minutes) :
+ - The CWA may exit in which case all Distant session are closed.
+ - The CWA may exit and restart in which case all distant session may be reloaded, or closed.
 
 ### 5.2 Disconnect
-Citrix will be greyed-out/unclickable and will indicate that it has lost the connection.
-After 5 minutes of no connection, Citrix will close.
-If connection is restored 
-- Within 3 minutes
-    - Citrix will resume
-- After 3 minutes
-    - orchestrator will shutdown
-    - new orchestrators will keep trying to start
-    - Citrix will resume and the last new orchestrator will continue running
+When reconnected after being disconnected for a duration of under 3 minutes, the CWA will resume and your Distant session will be available.
+
+When reconnected after being disconnected for a duration of more than 3 minutes, the CWA will resume and the session may be reloaded.
+
+When still disconnected for more than 5 minutes, the CWA and distant session will be closed.
 
 
 ### 6. Known Issues / Limitations
