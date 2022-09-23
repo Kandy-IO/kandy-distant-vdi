@@ -64,20 +64,20 @@ Each time the VDI driver is run, log files with the following format will be cre
 When the VDI Driver is run, log files that are 7 or more days old will be deleted.
 
 ## 5. Sleep & Disconnect
-CWA (Citrix Workspace App) handles computer sleep and network disconnects somewhat differently on each OS. This has some impact on Distant and your Distant sessions. It is important that your application can handle these scenarios. Please refer to the sub sections for more information.
+CWA (Citrix Workspace App) handles computer sleep and network disconnects somewhat differently on each OS. This has some impact on Distant and your Distant sessions. It is important that your application can handle these scenarios. Please refer to the subsections for more information.
 
 ### 5.1 Sleep
-When waking from a short sleep (less than 3 minutes) the CWA will resume and your Distant session will be available.
+When waking from a short sleep (less than approximately 3 minutes) the CWA will resume and your original Distant session will be available.
 
-When waking from a long sleep (more than 3 minutes) :
- - The CWA may exit in which case all Distant session are closed.
- - The CWA may exit and restart in which case all distant session may be reloaded, or closed.
+When waking from a long sleep (more than approximately 3 minutes) :
+ - The CWA may exit in which case your Distant session will be closed.
+ - The CWA may exit and restart in which case your Distant session may be reloaded, or closed.
 
 ### 5.2 Disconnect
 When the network disconnects, the CWA will prompt asking to reconnect. 
 
-When reconnecting, the CWA will resume but the distant session will not be available.
+When reconnecting, the CWA will resume but the original Distant session will not be available so the user needs to restart their app.
 
-When not reconnecting, then the CWA and distant session will be closed.
+When not reconnecting, then the CWA and Distant session will be closed. The user will need to open a new Citrix connection and create a new session once they have an internet connection.
 
 ### 6. Known Issues / Limitations
