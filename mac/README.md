@@ -207,8 +207,24 @@ Here are the steps to optimize Misson Control for FULLSCREEN mode:
 1. Open System Preferences -> Mission Control
 2. Ensure the checkbox next to "`Displays have separate Spaces`" is **CHECKED**/**ACTIVE**
 
+## 8. Sleep & Disconnect
+CWA (Citrix Workspace App) handles computer sleep and network disconnects somewhat differently on each OS when a VDI session is connected. This has some impact on Distant and your Distant sessions. It is important that your application can handle these scenarios. Please refer to the subsections for more information.
 
-## 8. Known Issues / Limitations
+### 8.1 Sleep
+When waking from a short sleep (less than approximately 3 minutes) the CWA will resume and your original Distant session will be available.
+
+When waking from a long sleep (more than approximately 3 minutes) :
+ - The CWA may exit in which case your Distant session will be closed.
+ - The CWA may exit and restart in which case your Distant session may be reloaded, or closed.
+
+### 8.2 Disconnect
+When reconnected after being disconnected for a duration of under 3 minutes, the CWA will resume and your original Distant session will be available.
+
+When reconnected after being disconnected for a duration of more than 3 minutes, the CWA will resume and your Distant session may be reloaded.
+
+When still disconnected for more than 5 minutes, the CWA your Distant session will be closed. The user will need to open a new Citrix connection and create a new session once they have an internet connection.
+
+## 9. Known Issues / Limitations
 ### Known Issues
 - No local and remote video seen on video call when the vdi mac recovers from "sleep"  action after 4 minutes. `KAJ-1127`
 - The remote app window functions best in fullscreen mode when Mission Control's *Displays have separate Spaces* is set to the default *checked* setting
