@@ -64,7 +64,7 @@ Each time the VDI driver is run, log files with the following format will be cre
 When the VDI Driver is run, log files that are 7 or more days old will be deleted.
 
 ## 5. Sleep & Disconnect
-CWA (Citrix Workspace App) handles computer sleep and network disconnects somewhat differently on each OS. This has some impact on Distant and your Distant sessions. It is important that your application can handle these scenarios. Please refer to the subsections for more information.
+CWA (Citrix Workspace App) handles computer sleep and network disconnects somewhat differently on each OS when a VDI session is connected. This has some impact on Distant and your Distant sessions. It is important that your application can handle these scenarios. Please refer to the subsections for more information.
 
 ### 5.1 Sleep
 When waking from a short sleep (less than approximately 3 minutes) the CWA will resume and your original Distant session will be available.

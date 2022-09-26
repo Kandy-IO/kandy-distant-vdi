@@ -208,7 +208,7 @@ Here are the steps to optimize Misson Control for FULLSCREEN mode:
 2. Ensure the checkbox next to "`Displays have separate Spaces`" is **CHECKED**/**ACTIVE**
 
 ## 8. Sleep & Disconnect
-CWA (Citrix Workspace App) handles computer sleep and network disconnects somewhat differently on each OS. This has some impact on Distant and your Distant sessions. It is important that your application can handle these scenarios. Please refer to the subsections for more information.
+CWA (Citrix Workspace App) handles computer sleep and network disconnects somewhat differently on each OS when a VDI session is connected. This has some impact on Distant and your Distant sessions. It is important that your application can handle these scenarios. Please refer to the subsections for more information.
 
 ### 8.1 Sleep
 When waking from a short sleep (less than approximately 3 minutes) the CWA will resume and your original Distant session will be available.
